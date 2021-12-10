@@ -1,0 +1,82 @@
+/* Sizing */
+
+.h-30{
+    height:30%;
+}
+.h-40{
+    height: 40%;
+}
+.h-60{
+    height: 60%;
+}
+.h-70{
+    height: 70%;
+}
+
+.h-85vh
+{
+    height: 85vh;
+}
+.h-20{
+    height: 20%;
+}
+.w-30{
+    width: 30%;
+}
+.w-35{
+    width: 35%;
+}
+
+.w-70{
+    width: 70%;
+}
+.w-85{
+    width: 80%;
+}
+.w-90{
+    width: 90%;
+}
+
+
+
+
+
+
+.spanLine{
+    width: 90%;
+    border-top: none;
+    border-bottom: 2px solid black;
+}
+
+.imgFlip{
+    transform: scaleX(-1);
+}
+
+
+/* Font */
+
+.font-1vw{
+    font-size: 1vw;
+}
+.font-2vw{
+    font-size: 2vw;
+}
+.font-3vw{
+    font-size: 3vw;
+}
+.font-4vw{
+    font-size: 4vw;
+}
+.font-5vw{
+    font-size: 5vw;
+}
+
+
+.font-125p{
+    font-size: 125%;
+}
+/* Color */
+
+.bg-color-w2{
+    background-color: rgb(224, 224, 224);
+}
