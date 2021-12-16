@@ -1,6 +1,5 @@
 <?php
 declare(strict_types=1);
-
 function generateUniqueHash(){
     date_default_timezone_set("Asia/Kuala_Lumpur");
     return date("ymdHis");
@@ -73,29 +72,39 @@ function validateInputLength($input, $minLength, $maxLength)
     }
 }
 
-    function session_unsetAll(&$session)
-    {
-        $sellerID = "";
-        
-        if (isset($session["sellerID"]))
-        {
-            $sellerID = $session["sellerID"];
-        }
-
-        unset($session);
+function session_unsetAll(&$session)
+{
+    $sellerID = "";
     
-        //If re-set back seller id
-        if ($sellerID !== "")
-        {
-            $session["SellerID"] = $sellerID;
-        }
+    if (isset($session["sellerID"]))
+    {
+        $sellerID = $session["sellerID"];
     }
 
-    function input_echoSetValue($value)
+    unset($session);
+
+    //If re-set back seller id
+    if ($sellerID !== "")
     {
-        if (isset($value))
-        {
-            echo "value='".$value."'";
-        }
+        $session["SellerID"] = $sellerID;
     }
+}
+
+function input_echoSetValue($value)
+{
+    if (isset($value))
+    {
+        echo "value='".$value."'";
+    }
+}
+
+function js_ConsoleLog($string)
+{
+    echo "<script>console.log('$string')</script>";
+}
+
+function js_RunScript($script)
+{
+    echo "<script>$script</script>";
+}
 ?>

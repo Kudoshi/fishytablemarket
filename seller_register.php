@@ -45,6 +45,22 @@
             $errorMsg .= "<br>* Invalid file format uploaded";
         }
         
+        
+
+        //Check with database
+        $sqlEmail = "SELECT SellerEmail FROM seller WHERE SellerEmail = '$email'";
+        $sqlShopName = "SELECT ShopName FROM seller WHERE ShopName = '$shopName'";
+        $resultEmail = mysqli_query($con, $sqlEmail) or die(mysqli_error($con));
+        $resultShopName = mysqli_query($con, $sqlShopName) or die(mysqli_errno($con));
+        if ($resultEmail->num_rows > 0)
+        {
+            $errorMsg .= "<br>* Email has already been used to register";
+        }
+        if ($resultShopName->num_rows>0)
+        {
+            $errorMsg .= "<br>* Shop name has already been taken";
+        }
+
         //Upload pic
         if ($errorMsg ==="") 
         { 
@@ -55,7 +71,7 @@
             }
         }
 
-        //Send confirmation message
+        // Insert into database
         if ($errorMsg === "")
         {
             date_default_timezone_set("Asia/Kuala_Lumpur");
@@ -69,13 +85,15 @@
                 $errorMsg .= "<br>Error creating an account";
             }
         }
-        if ($errorMsg === "")
+
+        // Control Redirect
+        if ($errorMsg === "") //SUCCESS
         {
             $_SESSION["Message"] = "Account successfully created";
             header("Location: seller_login.php");
             return;
         }
-        else //Error
+        else //ERROR
         {
             $_SESSION["Message"] = $errorMsg;
 
@@ -99,7 +117,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Header/footer usage</title>
+    <title>Seller Register</title>
 
     <?php require "import_headInfo.php"; ?>
     <?php require "resources/import_sellerHeadInfo.php"?>
