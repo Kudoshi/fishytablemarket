@@ -50,3 +50,4 @@
             Copyright © 2021 Fishytable Market & APU Web Solutions Sdn. Bhd.
         </div>
     </footer>
+    <?php mysqli_close($con);?>

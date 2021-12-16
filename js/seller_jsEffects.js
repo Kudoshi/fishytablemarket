@@ -13,7 +13,7 @@ function e_turnOnOffDisplay(arrId){
         }
         else{
             caller.classList.add("displayOn");
-            caller.classList.remove("d-none")
+            caller.classList.remove("d-none");
         }
     }
     

@@ -1,3 +1,4 @@
+<?php require "resources/seller_utility.php" ?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -6,23 +7,17 @@
 </head>
 <body>
     <div class="container-fluid bg-secondary">
-        <div class="d-flex">
-            <div class="display-6 m-2">Elderly Home Care</div>
-            <div>
-                <div class="h6 m-2"><a href="">Home</a></div>
-                <div class="h6 m-2"><a href="">Care Center</a></div>
-                <div class="h6 m-2"><a href="">Book Now</a></div>
-                <div class="h6 m-2"><a href="">View Your Booking</a></div>
-            </div>
-            
-        </div>
-        <!-- <div class="row">
-            <div class="col-2">Elderly Home Care</div>
-            <div class="col-1"><a href="">Home</a></div>
-            <div class="col-1"><a href="">Care Center</a></div>
-            <div class="col-1"><a href="">Book Now</a></div>
-            <div class="col-1"><a href="">View Your Booking</a></div>
-        </div> -->
+        <p><label for="file" style="cursor: pointer;">Upload Image</label></p>
+        <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;">
+
+        <br>
+        <img id="output" width="200" />	
     </div>
+
+    <script>var loadFile = function(event) {
+        var image = document.getElementById('output');
+        image.src = URL.createObjectURL(event.target.files[0]);
+    } 
+    </script>
 </body>
 </html>

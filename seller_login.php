@@ -1,3 +1,5 @@
+<?php require "resources/conn.php"?>
+<?php require "resources/seller_utility.php"?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,12 +13,18 @@
 </head>
 <body>
     <?php require "header.php"; ?>
-    <?php 
-$_SESSION['CustID'] = "SUkima";
-?>
 
-    <div class="container-fluid" >
+    <div class="container-fluid">
         <div class="row">
+            <div class="text-center bg-success text-white">
+                <?php if (isset($_SESSION["Message"])) 
+                    { 
+                        echo "<br>".$_SESSION["Message"]."<br><br>";
+                        unset($_SESSION["Message"]);
+                    }
+                ?>
+            </div>
+            
             <!-- Left Side -->
             <div class="col-sm-8 bg-primary pb-4 h-85vh">
                 <div class="d-flex flex-column justify-content-center h-100">
@@ -80,18 +88,18 @@ $_SESSION['CustID'] = "SUkima";
 
         </div>
     </div>
-    
+    <?php
+    if (isset($_POST['loginBtn']) && $_POST['loginBtn'] == 'Submit')
+    {
+        $_POST['loginBtn'] = NULL;
+        $post = $_POST['loginBtn'];
+        unset($_POST['loginBtn']);
+        echo "<script>console.log($post)</script>";
+        echo "<script>e_turnOnOffDisplay(['loginBtnGroup','loginForm','topBackBtn'])</script>";
+    }
+?>
     <?php require "footer.php";?>
 
-    <?php
-        if (isset($_POST['loginBtn']) && $_POST['loginBtn'] == 'Submit')
-        {
-            $_POST['loginBtn'] = NULL;
-            $post = $_POST['loginBtn'];
-            unset($_POST['loginBtn']);
-            echo "<script>console.log($post)</script>";
-            echo "<script>e_turnOnOffDisplay(['loginBtnGroup','loginForm','topBackBtn'])</script>";
-        }
-    ?>
+   
 </body>
 </html>
