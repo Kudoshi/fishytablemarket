@@ -24,7 +24,7 @@
         {
             $errorMsg .= "<br>* Incorrect password length";
         }
-        if (!is_numeric($telephoneNo) && !validateInputLength($telephoneNo,8,12))
+        if (!is_numeric($telephoneNo) || !validateInputLength($telephoneNo,8,12))
         {
             $errorMsg .= "<br>* Incorrect telephone number format";
         }
@@ -162,7 +162,7 @@
     <div class="container-fluid">
         <div class="row">
             <!-- Left Side -->
-            <div class="d-sm-flex flex-sm-column align-items-center col-sm-4 bg-primary pb-2" >
+            <div class="d-sm-flex flex-sm-column align-items-center col-sm-4 bg-color-white-0 pb-2" >
                 <div class="row pt-4 px-4">
                     <a class="col-2 col-sm-2 mt-2" href="seller_login.php"><img src="image/arrow.png" alt="Back Button" style="width:80%; height: auto; max-width: 30px;"></a>
                     <p class="col-8 display-6 col-sm-8 text-center" style="font-size: 200%;">Register Seller Account</p>
@@ -176,7 +176,7 @@
                 
             </div>
             <!-- Right Side -->
-            <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" enctype="multipart/form-data" class="needs-validation col-sm-8 bg-color-w2 flex-grow-1 p-4 d-flex flex-column align-items-center">   
+            <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" enctype="multipart/form-data" class="needs-validation col-sm-8 flex-grow-1 p-4 d-flex flex-column align-items-center bg-color-white-1">   
                 <div class="text-center text-danger h6">
                     <?php if (isset($_SESSION["Message"])) 
                     { 
@@ -231,7 +231,7 @@
                 <div class="row w-100 pb-4">
                     <div class="col-sm-3 h6"></div>
                     <div class="col-sm-6 input-group-sm px-4 text-center">
-                        <img id="picPlaceholder" class="text-center bg-secondary" style="width:20vh;height:20vh;">
+                        <img id="picPlaceholder" class="text-center bg-color-white-4 border border-5" style="width:20vh;height:20vh;">
                     </div>
                     <div class="col-sm-3"></div>
                 </div>

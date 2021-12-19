@@ -16,25 +16,4 @@ function e_turnOnOffDisplay(arrId){
             caller.classList.remove("d-none");
         }
     }
-    
-
-
-}
-
-
-
-
-function fadeLeft(caller, mSec, posX){
-    
-    let pos = caller.style.position;
-    let x = 0;
-    let animation = setInterval(startAnimation, 1000)
-
-    function startAnimation()
-    {
-    
-        alert(pos);
-        x += 1;
-    }
-
 }

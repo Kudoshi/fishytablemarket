@@ -28,9 +28,10 @@ function validateImg($image)
 function uploadImg($fileHeader, $image){
     //Generate name
     $imageFileType = strtolower(pathinfo($image["name"], PATHINFO_EXTENSION));
+    $f_name = $fileHeader."_".generateUniqueHash().".".$imageFileType;
     $f_Location = "image/submittedImage/".$fileHeader."_".generateUniqueHash().".".$imageFileType;
     if (move_uploaded_file($image["tmp_name"],$f_Location)){
-        return $f_Location;
+        return $f_name;
     }
     else{
         return False;

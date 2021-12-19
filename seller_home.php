@@ -16,18 +16,13 @@
     <?php require "resources/import_sellerHeadInfo.php"?>
 </head>
 <body>
-    <?php require "header.php"; ?>
+    <?php require "header_seller.php"; ?>
+   
+    <div class="container-fluid">
+        
+    </div>
 
-    Hello you are logged in. Congratulations.
-    <br>
-    <a href="seller_login.php">Click here to seller login!</a><br>
-    <a href="seller_logic_logout.php">Logout!</a>
-    <br>
-    This is your seller id: <br>
-    <?php
-        echo $_SESSION["SellerID"];
-    ?>
 
-    <?php require "footer.php";?>
+    <?php require "footer_seller.php";?>
 </body>
 </html>

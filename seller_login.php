@@ -6,6 +6,7 @@
         header("Location: seller_home.php");
         return;
     }
+    
 
     if (isset($_POST["loginBtn"]))
     {
@@ -23,10 +24,11 @@
             header("Location: seller_login.php");
             return;
         }
-        else{
+        else{ //Login
 
             $data = mysqli_fetch_array($result);
             $_SESSION["SellerID"] = $data["SellerID"];
+            $_SESSION["SellerName"] = $data["SellerName"];
             header("Location: seller_home.php");
             return;
         }
@@ -56,7 +58,7 @@
         }
     ?>
 
-    <div class="container-fluid">
+    <div class="container-fluid bg-color-green-1">
         <div class="row">
             <div class="text-center bg-success text-white">
                 <?php 
@@ -69,32 +71,32 @@
             </div>
             
             <!-- Left Side -->
-            <div class="col-sm-8 bg-primary pb-4 h-85vh">
-                <div class="d-flex flex-column justify-content-center h-100">
+            <div class="col-md-8  pb-4 h-85vh">
+                <div class="d-flex flex-column justify-content-center h-100 ">
                     <div class="p-2">
-                        <img src="image/fishytable_logo.png" alt="Fishytable Logo" class="rounded mx-auto d-block mt-auto" style="width:20vh ;height: auto;">
+                        <img src="image/fishytable_logo.png" alt="Fishytable Logo" class="rounded-circle shadow-lg mx-auto d-block mt-auto p-1" style="width:20vh ;height: auto; background-color: hsla(0, 0%, 0%, 0.2);">
                     </div>
                     <div class="display-4 text-center p-2">Fishytable Market</div>
-                    <div class="mx-auto w-75 h5 p-2"><p class="text-center"><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pellentesque dolor erat, ac tristique odio sagittis non.</small></p></div>
+                    <div class="mx-auto w-75 h5 p-2"><p class="text-center "><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pellentesque dolor erat, ac tristique odio sagittis non.</small></p></div>
                 </div>
-            </div>    
-            <!-- Right Side -->
-            <div class="col-sm-4 d-flex flex-column justify-content-center text-center p-2">
-                <div class="d-flex flex-column justify-content-center text-center h-20 ">
-                    <p class="display-6 m-0">Seller Account</p><br>
-                    <div class="row">
-                        <a class="col-sm-2" onclick="e_turnOnOffDisplay(['loginBtnGroup','loginForm','topBackBtn'])"><img src="image/arrow.png" alt="Back Button" class="d-none" style="width: 50%; height:auto;" id="topBackBtn"></a>
-                        <p class="h4 m-0 visible col-sm-8 ">LOGIN</p>
-                        <div class="col-sm-2 me-4"></div>
-                    </div>
-                    
+            </div>
 
+            <!-- Right Side -->
+            <div class="col-md-4 d-flex flex-column justify-content-center text-center justify-content-between p-0 bg-color-white-0 border-start border-dark border-2">
+                <div class="d-flex flex-column flex-grow-1 flex-md-grow-0 justify-content-center text-center h-20" style="min-height: 150px;">
+                    <p class="display-6 m-2 ">Seller Account</p><br>
+                    <div class="row">
+                        <a class="col-2"  onclick="e_turnOnOffDisplay(['loginBtnGroup','loginForm','topBackBtn'])"><img src="image/arrow.png" alt="Back Button" class="d-none" style="max-width:30px" id="topBackBtn"></a>
+                        <p class="h4 visible col-8 ">LOGIN</p>
+                        <div class="col-2 me-4"></div>
+                    </div>
                 </div>
+
                 <div class="spanLine mx-auto"></div>
                 <div class="flex-grow-1 d-flex flex-column w-70 justify-content-center mx-auto">
 
                     <!-- Register/login page -->
-                    <div class="d-flex flex-column mb-4 displayOn" id="loginBtnGroup" >
+                    <div class="d-flex flex-column mb-4 displayOn py-4 my-4" id="loginBtnGroup" >
                         <a class="btn btn-primary text-uppercase mb-4" onclick="e_turnOnOffDisplay(['loginBtnGroup','loginForm','topBackBtn'])">login</button>
                         <a class="btn btn-primary text-uppercase mt-4" href="seller_register.php" >register</a>
 
@@ -121,11 +123,11 @@
                     
                 </div>
                 <div class="spanLine mx-auto"></div>
-                <div class="h-25 d-flex flex-column pt-2">
+                <div class="h-25 d-flex flex-column pt-2 my-4">
                     <p>Want to be a seller? <a class="d-inline" href="#Contact Us">Contact Us!</a><br><br>
                     To customer login instead
                     </p>
-                    <a href="#CustomerLogin"><img src="image/arrow.png" class="imgFlip ms-2" style="width: 5%; height: auto;" alt="Arrow Link"></a>
+                    <a href="#CustomerLogin"><img src="image/arrow.png" class="imgFlip ms-2" style="max-width:20px" alt="Arrow Link"></a>
                     
                 </div>
             </div>
