@@ -2,7 +2,7 @@
 declare(strict_types=1);
 function generateUniqueHash(){
     date_default_timezone_set("Asia/Kuala_Lumpur");
-    return date("ymdHis");
+    return date("ymdHisv").session_id();
 }
 
 function validateImg($image)
@@ -25,11 +25,11 @@ function validateImg($image)
     return $uploadOk === True ? True: $uploadOk;
 }
 
-function uploadImg($fileHeader, $image){
+function uploadImg($image){
     //Generate name
     $imageFileType = strtolower(pathinfo($image["name"], PATHINFO_EXTENSION));
-    $f_name = $fileHeader."_".generateUniqueHash().".".$imageFileType;
-    $f_Location = "image/submittedImage/".$fileHeader."_".generateUniqueHash().".".$imageFileType;
+    $f_name = "_".generateUniqueHash().".".$imageFileType;
+    $f_Location = "image/"."_".generateUniqueHash().".".$imageFileType;
     if (move_uploaded_file($image["tmp_name"],$f_Location)){
         return $f_name;
     }
@@ -107,5 +107,12 @@ function js_ConsoleLog($string)
 function js_RunScript($script)
 {
     echo "<script>$script</script>";
+}
+
+function sql_idRetrieveAll($con, $table, $idColName, $idData)
+{
+    $sql = "SELECT * FROM $table WHERE $idColName = $idData";
+    $result = mysqli_query($con, $sql) or die(mysqli_error($con));
+    return mysqli_fetch_array($result);
 }
 ?>

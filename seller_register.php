@@ -64,7 +64,7 @@
         //Upload pic
         if ($errorMsg ==="") 
         { 
-            $PicName = uploadImg($shopName, $shopPic);
+            $PicName = uploadImg($shopPic);
             if($PicName === False)
             {
                 $$errorMsg .= "<br>* Unable to upload image";
