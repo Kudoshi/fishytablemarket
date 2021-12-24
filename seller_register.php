@@ -36,7 +36,7 @@
         {
             $errorMsg .= "<br>* Incorrect shop length format";
         }
-        if (!validateInputLength($shopDescription, 1, 150))
+        if (!validateInputLength($shopDescription, 1, 500))
         {
             $errorMsg .= "<br>* Shop description is too long";
         }
@@ -221,11 +221,11 @@
                 <div class="row w-100 pb-4">
                     <div class="col-sm-3 h6"><label for="shopDescriptionBox" class="form-label">Shop Description:</label></div>
                     <div class="col-sm-6 input-group-sm px-4"><textarea class="form-control" name="ShopDescription" id="shopDescriptionBox" placeholder="Shop Description" rows="5" required><?php echo $shopDescription?></textarea></div>
-                    <div class="col-sm-3"><small>Max 150 characters</small></div>
+                    <div class="col-sm-3"><small>Max 500 characters</small></div>
                 </div>
                 <div class="row w-100 pb-4">
                     <div class="col-md-3 col-sm-3 h6"><label for="shopPhotoBox" class="form-label">Shop Photo:</label></div>
-                    <div class="col-md-6 col-sm-9 input-group-sm px-4 "><input type="file" name="PicFile" id="shopPhotoBox" onchange="displayImg(event)" accept="image/jpg, image/jpeg, image/png" required></div>
+                    <div class="col-md-6 col-sm-9 input-group-sm px-4 "><input type="file" name="PicFile" id="shopPhotoBox" class="form-control" onchange="displayImg(event)" accept="image/jpg, image/jpeg, image/png" required></div>
                     <div class="col-md-3 col-sm-12"><small>Recommended: 1:1 image ratio<br>Only .png, .jpg and .jpeg files allowed<br>Max 2MB size</small></div>
                 </div>
                 <div class="row w-100 pb-4">
@@ -255,7 +255,7 @@
                 image.src = URL.createObjectURL(event.target.files[0]);
             }
             catch(err){
-                image.src = "#";
+                image.src = "image/emptyPic.png";
             }
         }
     </script>

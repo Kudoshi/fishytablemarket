@@ -41,6 +41,17 @@
 {
     text-shadow: 1px 2px 2px #ffffff;
 }
+
+.text-gray-1{
+    color: #ebebeb;
+
+}
+.text-gray-2{
+    color: #d3d3d3;
+}
+.text-gray-3{
+    color: #9b9d9e;
+}
 /* Color */
 
 .bg-color-green-0{
@@ -107,3 +118,23 @@
     background-color:rgb(150, 150, 150);
 
 }
+
+.bg-color-black-1{
+    background-color: #212529;   
+}
+
+.bg-color-black-2{
+    
+    background-color: #292e33;
+
+}
+
+.bg-color-black-3{
+    background-color: #434a52;
+
+}
+.bg-color-black-4
+{
+    background-color: #7f8d9a;
+}
+

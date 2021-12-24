@@ -1,9 +1,8 @@
 
-
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3"> 
         <div class="container">
-            <a href="#home" class="navbar-brand"><img src="image/fishytable_logo.png"  width=50px></a>
-            <a href="#home" class="navbar-brand">Fishytable Market</a>
+            <a href="homePage.php" class="navbar-brand"><img src="image/fishytable_logo.png" width=50px></a>
+            <a href="homePage.php" class="navbar-brand">Fishytable Market</a>
             <button 
                 class="navbar-toggler" 
                 type="button"
@@ -16,25 +15,34 @@
             <div class="collapse navbar-collapse" id="navmenu">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a href="seller_login.php" class="nav-link">Home</a>
+                        <a href="homePage.php" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#fishery" class="nav-link">Fishery</a>
+                        <a href='homePage.php?type=organic' class="nav-link" id="organicLink">Organics</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#organics" class="nav-link">Organics</a>
+                        <a href='homePage.php?type=fishery' class="nav-link" id="fisheryLink">Fishery</a>
+
                     </li>
                     <li class="nav-item">
-                        <a href="#login" class="nav-link">Login</a>
+                        <a href="customer_login.php" class="nav-link">Login</a>
                     </li>
                     <li class="nav-item">
                         <a href="#register" class="nav-link">Register</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#cart" class="nav-link"><img src="image/cart2.png"  width="15px",height="15px"></a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#search" class="nav-link"><img src="image/search.png" width="15px",height="15px"></a>
+                    <?php
+                        if (isset($_SESSION["CustID"])) {
+                        echo '<li class="nav-item">
+                            <a href="cartPage.php" method="post" class="nav-link position-relative"><img src="image/cart2.png"  width="20px",height="20px">
+                                <span class="position-absolute top-0 start-100 translate-middle badge bg-warning rounded-pill text-dark">
+                                    99+
+                                </span>
+                            </a>
+                        </li>';
+                        }
+                    ?>
+                    <li class="nav-item ms-2">
+                        <a href="#search" class="nav-link"><img src="image/search.png" width="20px",height="20px"></a>
                     </li>
                 </ul>
             </div>

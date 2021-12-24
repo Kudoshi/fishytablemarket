@@ -44,6 +44,23 @@
     border-bottom: 2px solid black;
 }
 
+.spanLineFull{
+    width: 100%;
+    border-top:none;
+    border-bottom: 2px solid black;
+}
+
+.spanLineWhiteFull{
+    width: 100%;
+    border-top:none;
+    border-bottom: 2px solid white;
+}
+.spanLineFull-blue{
+    width: 100%;
+    border-top:none;
+    border-bottom: 2px solid rgb(35, 85, 223);
+}
+
 .imgFlip{
     transform: scaleX(-1);
 }
