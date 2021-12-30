@@ -2,6 +2,9 @@
 <?php require "resources/seller_utility.php"?>
 <?php require "resources/basic_utility.php"?>
 <?php
+
+
+
     $sellerID = $_GET["SellerID"];
     $data_seller = sql_retrieveRecord($con, "seller", "SellerID", $sellerID);
     $result_product = sql_retrieveRecord($con, "product", "SellerID", $sellerID, true);
@@ -31,7 +34,8 @@
     <?php require "resources/import_sellerHeadInfo.php"?>
 </head>
 <body>
-    <?php require "header_seller.php";?>
+    <?php require "header.php"; ?>
+
     
     <div class="container-fluid">
         <div class="row bg-color-black-2 border-bottom border-dark border-1 pb-1">
@@ -119,6 +123,6 @@
     </div>
 
 
-    <?php require "footer_seller.php";?>
+    <?php require "footer.php";?>
 </body>
 </html>

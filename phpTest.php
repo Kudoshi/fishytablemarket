@@ -7,10 +7,9 @@
     <?php require "resources/import_sellerHeadInfo.php"?>
 </head>
 <body>
-  <?php 
-    $num = 1243.54;
-    $numlength = strlen((string)(int)$num);
-    echo $numlength;
-  ?>
+
+sd
+  <iframe src="seller_profile.php?SellerID=2" title="description" style="width: 80%; height: 600px"></iframe>
+
 </body>
 </html>
