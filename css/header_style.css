@@ -103,10 +103,25 @@
     border-top: none;
     border-bottom: 2px solid black;
 }
+.spanLine-sm{
+    width: 90%;
+    border-top: none;
+    border-bottom: 1px solid black;
+}
 .spanLine-gray{
     width: 90%;
     border-top: none;
     border-bottom: 2px solid rgb(235, 235, 235);
+}
+.spanLine-blue-1{
+    width: 90%;
+    border-top: none;
+    border-bottom: 2px solid #0d6efd;
+}
+.spanLine-blue-2{
+    width: 90%;
+    border-top: none;
+    border-bottom: 2px solid #4a93ff;
 }
 
 .imgFlip{

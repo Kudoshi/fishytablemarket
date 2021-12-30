@@ -55,7 +55,7 @@
         while ($row=mysqli_fetch_array($result))
         {
             $element = '
-            <div class="card shadow-sm me-4 mb-4 " style="width:250px; height: 370px;">
+            <div class="card shadow-sm me-4 mb-4 " style="width:250px; height: 370px; min-width:250px"">
                 <a href="seller_products_edit.php?ProductID='.$row["ProductID"].'" class="text-decoration-none on-hover-darken">
                     <div  class="card-img-top pt-2 text-center "><img src="'.$row["ProductPicture"].'" alt="Product image" class="" style="width:230px; height: 230px"></div>
                     <div class="card-body p-0">

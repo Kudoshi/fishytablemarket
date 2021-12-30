@@ -42,7 +42,7 @@
             <div class="col-md-1"></div>
         </div>
         <div class="px-4 mx-4 mt-3">
-            <div class="shadow-sm bg-color-black-3 border rounded-3 p-4 d-flex justify-content-center text-shadow-edge">
+            <div class="shadow-sm border rounded-3 bg-color-black-3  p-4 d-flex justify-content-center text-shadow-edge">
                 <div class="fs-5 text-white text-center px-4"><?php echo $_SESSION["SellerData"]["ShopName"] ?></div>
                 <span class="fs-5 text-primary">|</span>
                 <div class="fs-5 text-white text-center px-4">Total Order: <?php echo $result->num_rows; ?></div>
