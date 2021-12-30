@@ -55,7 +55,7 @@
 
 <!-- Content -->
 <div class="flex-container-row bg-color-black-4 text-white">
-  <div class="main-product-img" style="some-margin" style="width:30%;">
+  <div class="main-product-img" style="width:30%;">
       <img src="<?php echo $data["ProductPicture"];?>" alt="Product_Pic" >
   </div>
   <div class="flex-container-column p-4 ms-4" style="width:800px;">

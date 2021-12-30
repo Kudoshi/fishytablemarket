@@ -1,4 +1,3 @@
-'use strict';
 
 function e_turnOnOffDisplay(arrId){
 
@@ -15,5 +14,18 @@ function e_turnOnOffDisplay(arrId){
             caller.classList.add("displayOn");
             caller.classList.remove("d-none");
         }
+    }
+}
+
+function SetDecimalFloatValue(id, decimalPoint, value, defaultValue="")
+{
+    element = document.getElementById(id);
+
+    if (isNaN(value))
+    {
+        element.value = defaultValue;
+    }
+    else{
+        element.value = parseFloat(value).toFixed(decimalPoint);
     }
 }

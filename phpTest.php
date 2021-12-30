@@ -7,9 +7,10 @@
     <?php require "resources/import_sellerHeadInfo.php"?>
 </head>
 <body>
-    <?php 
-        echo generateUniqueHash();
-        echo session_id();
-    ?>
+  <?php 
+    $num = 1243.54;
+    $numlength = strlen((string)(int)$num);
+    echo $numlength;
+  ?>
 </body>
 </html>

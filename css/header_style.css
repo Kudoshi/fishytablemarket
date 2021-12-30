@@ -1,4 +1,9 @@
 /* Fonts */
+.text-shadow-xsoft
+{
+    text-shadow: 0px 1px 10px #000000;
+
+}
 
 .text-shadow-soft
 {
@@ -19,7 +24,7 @@
 }
 .text-shadow-edge
 {
-    text-shadow: 1px 2px 2px #000000;
+    text-shadow: 0px 1px 1px #505050;
 }
 .text-light-soft
 {
@@ -52,6 +57,63 @@
 .text-gray-3{
     color: #9b9d9e;
 }
+
+.limit-wrap
+{
+    text-overflow: ellipsis;
+    /* white-space: nowrap; */
+    overflow: hidden; 
+}
+
+.spanLineFull-sm{
+    width: 100%;
+    border-top:none;
+    border-bottom: 1px solid black;
+}
+
+.spanLineFull{
+    width: 100%;
+    border-top:none;
+    border-bottom: 2px solid black;
+}
+
+.spanLineWhiteFull{
+    width: 100%;
+    border-top:none;
+    border-bottom: 2px solid white;
+}
+
+.spanLineFull-blue{
+    width: 100%;
+    border-top:none;
+    border-bottom: 2px solid rgb(35, 85, 223);
+}
+.spanLineFull-gray{
+    width: 100%;
+    border-top:none;
+    border-bottom: 2px solid rgb(235, 235, 235);
+}
+.spanLineFull-gray-sm{
+    width: 100%;
+    border-top:none;
+    border-bottom: 1px solid rgb(235, 235, 235);
+}
+.spanLine{
+    width: 90%;
+    border-top: none;
+    border-bottom: 2px solid black;
+}
+.spanLine-gray{
+    width: 90%;
+    border-top: none;
+    border-bottom: 2px solid rgb(235, 235, 235);
+}
+
+.imgFlip{
+    transform: scaleX(-1);
+}
+
+
 /* Color */
 
 .bg-color-green-0{

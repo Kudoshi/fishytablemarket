@@ -1,7 +1,5 @@
 
     <footer class="bg-dark text-center text-white text-lg-start border pb-4">
-
-        
         <div class="container text-center text-md-start mt-2 pt-3">
             <div class="row mt-3">
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-3" id="hi">

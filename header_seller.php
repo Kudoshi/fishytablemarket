@@ -1,8 +1,8 @@
 
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3"> 
         <div class="container">
-            <a href="#home" class="navbar-brand"><img src="image/fishytable_logo.png"  width=50px></a>
-            <a href="#home" class="navbar-brand">Fishytable Market</a>
+            <a href="seller_home.php" class="navbar-brand"><img src="image/fishytable_logo.png"  width=50px></a>
+            <a href="seller_home.php" class="navbar-brand">Fishytable Market</a>
             <button 
                 class="navbar-toggler" 
                 type="button"
@@ -18,10 +18,10 @@
                         <a href="seller_home.php" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#fishery" class="nav-link">Products</a>
+                        <a href="seller_products.php" class="nav-link">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#organics" class="nav-link">Orders</a>
+                        <a href="seller_orders.php" class="nav-link">Orders</a>
                     </li>
                     <li class="dropdown nav-item">
                         <a class="dropdown-toggle nav-link" role="button" href="#" data-bs-toggle="dropdown"> 
@@ -29,10 +29,10 @@
                                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                                 <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
                             </svg>
-                            <?php echo $_SESSION['SellerName']?>
+                            <?php echo $_SESSION["SellerData"]['SellerName']?>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="#" class="dropdown-item" >Orders</a></li>
+                            <li><a href="seller_profile.php?SellerID=<?php echo $_SESSION['SellerData']['SellerID'] ?>" class="dropdown-item" >View Shop</a></li>
                             <li><a href="seller_logic_logout.php" class="dropdown-item" >Log out</a></li>
                         </ul>
                     </li>

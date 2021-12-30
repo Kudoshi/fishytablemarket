@@ -28,7 +28,7 @@ function validateImg($image)
 function uploadImg($image){
     //Generate name
     $imageFileType = strtolower(pathinfo($image["name"], PATHINFO_EXTENSION));
-    $f_name = "_".generateUniqueHash().".".$imageFileType;
+    $f_name = "image/_".generateUniqueHash().".".$imageFileType;
     $f_Location = "image/"."_".generateUniqueHash().".".$imageFileType;
     if (move_uploaded_file($image["tmp_name"],$f_Location)){
         return $f_name;
@@ -37,7 +37,6 @@ function uploadImg($image){
         return False;
     }
 }
-
 
 function sanitizeInput($input, $filterTag)
 {
@@ -49,10 +48,6 @@ function sanitizeInput($input, $filterTag)
     else if ($filterTag == "string")
     {
         $filterElement = FILTER_SANITIZE_STRING;
-    }
-    else if ($filterTag == "integer")
-    {
-        $filterElement = FILTER_SANITIZE_NUMBER_INT;
     }
     else{
         throw new Exception("Filter tag not found in validation function!");
@@ -109,10 +104,49 @@ function js_RunScript($script)
     echo "<script>$script</script>";
 }
 
-function sql_idRetrieveAll($con, $table, $idColName, $idData)
+//Returns data. If returnResult is true, return result instead
+function sql_retrieveRecord($con, $table, $idColName, $idData, $returnResult = false)
 {
-    $sql = "SELECT * FROM $table WHERE $idColName = $idData";
+    $sql = "SELECT * FROM $table WHERE $idColName = '$idData'";
+    $result = mysqli_query($con, $sql) or die(mysqli_error($con));
+
+    return $returnResult == false ? mysqli_fetch_array($result) : $result;
+}
+
+function db_checkIfValueExist($con, $table, $colName, $value)
+{
+    $sql = "SELECT * FROM $table WHERE $colName = '$value'";
+    
+    $result = mysqli_query($con, $sql) or die(mysqli_error($con));
+    
+
+    return $result->num_rows > 0 ? True : False;
+}
+
+// Returns data of category+subcategory
+function subcategory_getData($con, $subCategoryID)
+{
+    $sql = "SELECT * FROM subcategory 
+    INNER JOIN category ON category.CategoryID = subcategory.CategoryID
+    WHERE SubCategoryID = '".$subCategoryID."'";
+    
     $result = mysqli_query($con, $sql) or die(mysqli_error($con));
     return mysqli_fetch_array($result);
+}
+// Returns the category fa icon element
+function print_categoryIcon($con, $subCategoryID)
+{
+    $sql = "SELECT CategoryID FROM subcategory 
+    WHERE SubCategoryID = '".$subCategoryID."'";
+    $result = mysqli_query($con, $sql) or die(mysqli_error($con));
+    $data =  mysqli_fetch_array($result);
+    if ($data["CategoryID"] == "ORGACA")
+    {
+        return "fas fa-leaf text-success";
+    }
+    else
+    {
+        return "fas fa-fish text-primary";
+    }
 }
 ?>

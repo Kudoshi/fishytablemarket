@@ -1,17 +1,10 @@
 <?php require "resources/conn.php"?>
 <?php require "resources/seller_utility.php"?>
-<?php
-   if (!isset($_SESSION["SellerID"]))
-   {
-       header("Location: seller_login.php");
-       return;
-   }
-   $data = sql_idRetrieveAll($con, "seller", "SellerID", $_SESSION["SellerID"]);
-?>
+<?php require "resources/seller_security.php"?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Fishytable Market|Seller Login</title>
+    <title>Fishytable Market</title>
     
     <?php require "import_headInfo.php"?>
     <?php require "resources/import_sellerHeadInfo.php"?>
@@ -22,16 +15,16 @@
     <div class="container-fluid">
         <div class="row bg-color-black-2 border-bottom border-dark border-1 pb-1">
             <div class="col-md-3 text-center p-4 d-flex align-items-center justify-content-center">
-                <img class="border border-2 border-dark shadow" src="image/<?php echo $data['SellerPhoto'];?>" style="max-width: 200px; min-width:75px;" alt="Picture of seller">
+                <img class="border border-2 border-dark shadow" src="<?php echo $_SESSION['SellerData']['SellerPhoto'];?>" style="width: 12vw; height: 12vw;" alt="Picture of seller">
             </div>
             <div class="col-md-8 d-md-flexbox flex-md-column p-0 ">
-                <div class="h4 ps-2 pt-4 text-gray-3"><small><?php echo $data['SellerName']?></small></div>
+                <div class="h4 ps-2 pt-4 text-gray-3"><small><?php echo $_SESSION['SellerData']['SellerName']?></small></div>
                 <div class="display-5 ps-2 pb-2 row">
-                    <div class="col-md-9 text-gray-1"><?php echo $data['ShopName']?></div>
-                    <div class="col-md-2 text-center text-gray-1"><div class="btn btn-primary">View Shop</div></div>
+                    <div class="col-md-9 text-gray-1"><?php echo $_SESSION['SellerData']['ShopName']?></div>
+                    <div class="col-md-2 text-center text-gray-1"><a href="seller_profile.php?SellerID=<?php echo $_SESSION['SellerData']['SellerID'] ?>" class="btn btn-primary">View Shop</a></div>
                 </div>
                 <div class="spanLineFull-blue p-0 mb-2"></div>
-                <div class=""><p class="p-2 my-3 me-4 ms-2 text-gray-3"><?php echo $data['SellerDescription']?></p></div>
+                <div class=""><p class="p-2 my-3 me-4 ms-2 text-gray-3"><?php echo $_SESSION['SellerData']['SellerDescription']?></p></div>
             </div>
             <div class="col-md-1"></div>
         </div>
@@ -40,7 +33,7 @@
                 <div class="d-flex flex-column bg-color-black-3 align-items-center flex-wrap m-2" style="width: 25rem; height: 25rem;">
                     <div class="h2 align-items-center m-4 p-3">ORDERS</div><br>
                     <div class="flex-fill flex-grow-1 mx-4 mt-4 px-1 pt-4 flex-grow-1 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et risus ut arcu pretium feugiat. </div>
-                    <a href="$Order" class="mb-3 p-2 text-gray-2 fs-1" ><i class="bi bi-arrow-right-square-fill"></i></a>
+                    <a href="seller_orders.php" class="mb-3 p-2 text-gray-2 fs-1" ><i class="bi bi-arrow-right-square-fill"></i></a>
                 </div>
                 <div class="d-flex flex-column bg-color-black-3 align-items-center flex-wrap m-2" style="width: 25rem; height: 25rem;">
                     <div class="h2 align-items-center m-4 p-3">PRODUCTS</div><br>

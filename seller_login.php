@@ -1,7 +1,7 @@
 <?php require "resources/conn.php"?>
 <?php require "resources/seller_utility.php"?>
 <?php
-    if (isset($_SESSION["SellerID"]))
+    if (isset($_SESSION["SellerData"]))
     {
         header("Location: seller_home.php");
         return;
@@ -13,9 +13,10 @@
         $email = sanitizeInput($_POST["loginEmail"], "email");
         $password = sanitizeInput($_POST["loginPwd"], "string");
 
-        $sql = "SELECT * FROM seller WHERE SellerEmail = '$email' AND SellerPassword = '$password'";
+        $sql = "SELECT SellerID, SellerName, SellerEmail, SellerTelephone, SellerPhoto, ShopName, SellerAddress, SellerDescription, JoinDate, SellerRating
+                FROM seller WHERE SellerEmail = '$email' AND SellerPassword = '$password'";
         $result = mysqli_query($con, $sql) or die(mysqli_error($con));
-
+        
         if (!$result->num_rows>0)//If no record
         {
             $_SESSION["msg_loginError"] = "* Your email and/or password is incorrect, please try again";
@@ -27,8 +28,7 @@
         else{ //Login
 
             $data = mysqli_fetch_array($result);
-            $_SESSION["SellerID"] = $data["SellerID"];
-            $_SESSION["SellerName"] = $data["SellerName"];
+            $_SESSION["SellerData"] = $data;
             header("Location: seller_home.php");
             return;
         }
@@ -58,7 +58,7 @@
         }
     ?>
 
-    <div class="container-fluid bg-color-green-1">
+    <div class="container-fluid bg-color-blue-1">
         <div class="row">
             <div class="text-center bg-success text-white">
                 <?php 
@@ -127,7 +127,7 @@
                     <p>Want to be a seller? <a class="d-inline" href="#Contact Us">Contact Us!</a><br><br>
                     To customer login instead
                     </p>
-                    <a href="#CustomerLogin"><img src="image/arrow.png" class="imgFlip ms-2" style="max-width:20px" alt="Arrow Link"></a>
+                    <a href="customer_login.php"><img src="image/arrow.png" class="imgFlip ms-2" style="max-width:20px" alt="Arrow Link"></a>
                     
                 </div>
             </div>

@@ -1,6 +1,12 @@
 <?php require "resources/conn.php"?>
 <?php require "resources/seller_utility.php"?>
 <?php
+    if (isset($_SESSION["SellerData"])) 
+    {
+        header("Location: seller_home.php");
+        return;
+    }
+
     if (isset($_POST["registerBtn"])){
         $errorMsg = "";
         $fullName= sanitizeInput($_POST["Name"], "string");
@@ -14,7 +20,7 @@
         
         if (!validateInputLength($fullName, 3, 60))
         {
-            $errorMsg .= "<br>* Name is too long";
+            $errorMsg .= "<br>* Name is too long/short";
         }
         if (!validateInputLength($email, 3, 255) && filter_var($email, FILTER_VALIDATE_EMAIL) === false)
         {
@@ -77,9 +83,9 @@
             date_default_timezone_set("Asia/Kuala_Lumpur");
             $date = date("y-m-d");
             $sql = "INSERT INTO seller (SellerName, SellerEmail, SellerPassword, SellerTelephone, SellerPhoto, ShopName, 
-            SellerAddress, SellerDescription, JoinDate)
+            SellerAddress, SellerDescription, JoinDate, SellerRating)
             VALUES
-            ('$fullName', '$email', '$password', '$telephoneNo', '$PicName', '$shopName', '$address', '$shopDescription', '$date')";
+            ('$fullName', '$email', '$password', '$telephoneNo', '$PicName', '$shopName', '$address', '$shopDescription', '$date', 0)";
             if (!mysqli_query($con,$sql))
             {
                 $errorMsg .= "<br>Error creating an account";
@@ -117,19 +123,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Seller Register</title>
+    <title>Fishytable Market</title>
 
     <?php require "import_headInfo.php"; ?>
     <?php require "resources/import_sellerHeadInfo.php"?>
 </head>
 <body>
     <?php
-        //Prevent user from registering when logged in
-        if (isset($_SESSION["CustomerID"])) 
-        {
-            header("Location: seller_home.php");
-            return;
-        }
         //Insert previously entered form data
         if (isset($_SESSION["FormData"]))
         {  
@@ -176,7 +176,7 @@
                 
             </div>
             <!-- Right Side -->
-            <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" enctype="multipart/form-data" class="needs-validation col-sm-8 flex-grow-1 p-4 d-flex flex-column align-items-center bg-color-white-1">   
+            <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" enctype="multipart/form-data" onsubmit="return CheckImage()" class="needs-validation col-sm-8 flex-grow-1 p-4 d-flex flex-column align-items-center bg-color-white-1">   
                 <div class="text-center text-danger h6">
                     <?php if (isset($_SESSION["Message"])) 
                     { 
@@ -225,7 +225,9 @@
                 </div>
                 <div class="row w-100 pb-4">
                     <div class="col-md-3 col-sm-3 h6"><label for="shopPhotoBox" class="form-label">Shop Photo:</label></div>
-                    <div class="col-md-6 col-sm-9 input-group-sm px-4 "><input type="file" name="PicFile" id="shopPhotoBox" class="form-control" onchange="displayImg(event)" accept="image/jpg, image/jpeg, image/png" required></div>
+                    <div class="col-md-6 col-sm-9 input-group-sm px-4 "><input type="file" name="PicFile" id="shopPhotoBox" class="form-control" onchange="displayImg(event)" accept="image/jpg, image/jpeg, image/png" required>
+                        <div id="id_photoErrorMsg" class="text-danger mt-2"></div>
+                    </div>
                     <div class="col-md-3 col-sm-12"><small>Recommended: 1:1 image ratio<br>Only .png, .jpg and .jpeg files allowed<br>Max 2MB size</small></div>
                 </div>
                 <div class="row w-100 pb-4">
@@ -238,7 +240,6 @@
 
                 <div>
                     <br><br>
-                    <!-- TODO: JS and PHP validation -->
                     <input type="submit" class="btn btn-primary" name="registerBtn">
                 </div>
                 
@@ -250,12 +251,36 @@
 
     <script>
         function displayImg(event){
-            var image = document.getElementById('picPlaceholder')
+            var image = document.getElementById('id_picPlaceHolder');
             try{
+                fileFormat = event.target.files[0].name.substring(event.target.files[0].name.lastIndexOf('.')+1, event.target.files[0].name.length);
+                
+                if (fileFormat != "jpg" && fileFormat != "png" && fileFormat != "jpeg")
+                {
+                    throw("<b>*Invalid File Format</b>");
+                }
                 image.src = URL.createObjectURL(event.target.files[0]);
+
+                var errorMsg = document.getElementById("id_photoErrorMsg");
+                errorMsg.innerHTML = "";
             }
             catch(err){
+                var errorMsg = document.getElementById("id_photoErrorMsg");
+                errorMsg.innerHTML = err;
                 image.src = "image/emptyPic.png";
+            }
+        }
+
+        function CheckImage(){
+            var errorMsg = document.getElementById("id_photoErrorMsg");
+            console.log(errorMsg.innerHTML);
+            if (errorMsg.innerHTML.trim() != "")
+            {
+                alert("Invalid image format uploaded \n Only jpg, png and jpeg files are allowed");
+                return false;
+            }
+            else{
+                return true;
             }
         }
     </script>
