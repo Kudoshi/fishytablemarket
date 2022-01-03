@@ -75,12 +75,12 @@
             
             <!-- Left Side -->
             <div class="col-md-8  pb-4 h-85vh">
-                <div class="d-flex flex-column justify-content-center h-100 ">
+                <div class="d-flex flex-column justify-content-center h-100 text-white text-shadow-edge">
                     <div class="p-2">
                         <img src="image/fishytable_logo.png" alt="Fishytable Logo" class="rounded-circle shadow-lg mx-auto d-block mt-auto p-1" style="width:20vh ;height: auto; background-color: hsla(0, 0%, 0%, 0.2);">
                     </div>
                     <div class="display-4 text-center p-2">Fishytable Market</div>
-                    <div class="mx-auto w-75 h5 p-2"><p class="text-center "><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pellentesque dolor erat, ac tristique odio sagittis non.</small></p></div>
+                    <div class="mx-auto w-75 fs-5 p-2"><p class="text-center "><small>Malaysia's e-commerce website providing a platform for the local farmers, fisherman and bussiness to sell their produce</small></p></div>
                 </div>
             </div>
 

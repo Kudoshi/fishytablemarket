@@ -8,7 +8,7 @@
                     <h5 class="text-uppercase fw-bold mb-3">
                         Information
                     </h5>
-                    <a href="#Terms and Condition"  class="text-white text-decoration-none">Terms and Condition</a><br>
+                    <a href="terms_and_condition.php"  class="text-white text-decoration-none">Terms and Condition</a><br>
                     <a href="aboutusPage.php"  class="text-white text-decoration-none">About Us</a><br>
                     <a href="#Privacy Policy"  class="text-white text-decoration-none">Privacy Policy</a>
                 </div>
@@ -19,8 +19,8 @@
                     </h5>
                     <a href="seller_login.php"  class="text-white text-decoration-none text-nowrap">Seller Login</a><br>
                     <a href="customer_login.php"  class="text-white text-decoration-none text-nowrap">Customer Login</a><br>
-                    <a href="#Fishery"  class="text-white text-decoration-none text-nowrap">Fishery</a><br>
-                    <a href="#Organic"  class="text-white text-decoration-none text-nowrap">Organic</a><br>
+                    <a href="homePage.php?type=organic"  class="text-white text-decoration-none text-nowrap">Organic</a><br>
+                    <a href="homePage.php?type=fishery"  class="text-white text-decoration-none text-nowrap">Fishery</a><br>
                     
                 </div>
 
@@ -37,9 +37,9 @@
                     Follow Us
                     </h5>
                     <p>
-                    <a href="#Facebook" class="text-reset text-decoration-none">Facebook</a><br>
-                    <a href="#Instagram" class="text-reset text-decoration-none">Instagram</a><br>
-                    <a href="#Twitter" class="text-reset text-decoration-none">Twitter</a>
+                    <a href="https://www.facebook.com" class="text-reset text-decoration-none">Facebook</a><br>
+                    <a href="https://www.instagram.com" class="text-reset text-decoration-none">Instagram</a><br>
+                    <a href="https://www.twitter.com" class="text-reset text-decoration-none">Twitter</a>
                     </p>
                 </div>
             </div>
