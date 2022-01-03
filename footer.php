@@ -17,8 +17,8 @@
                     <h5 class="text-uppercase fw-bold mb-3">
                         Quick Link
                     </h5>
-                    <a href="Seller Page"  class="text-white text-decoration-none text-nowrap">Seller Page</a><br>
-                    <a href="$Cust Login"  class="text-white text-decoration-none text-nowrap">Customer Login</a><br>
+                    <a href="seller_login.php"  class="text-white text-decoration-none text-nowrap">Seller Login</a><br>
+                    <a href="customer_login.php"  class="text-white text-decoration-none text-nowrap">Customer Login</a><br>
                     <a href="#Fishery"  class="text-white text-decoration-none text-nowrap">Fishery</a><br>
                     <a href="#Organic"  class="text-white text-decoration-none text-nowrap">Organic</a><br>
                     

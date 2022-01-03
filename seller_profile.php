@@ -40,7 +40,7 @@
                 <img class="border border-2 border-dark shadow" src="<?php echo $data_seller['SellerPhoto'];?>" style="width: 200px; height: 200px;" alt="Picture of seller">
             </div>
             <div class="col-md-8 d-md-flexbox flex-md-column p-0 py-4 ">
-                <div class="fs-5 text-gray-3 ps-2">Seller Profile</div>
+                <div class="fs-5 text-gray-3 ps-2">Seller Shop</div>
                 <div class="display-5 ps-2 mb-1">
                     <div class="text-gray-1"><?php echo $data_seller['ShopName']?></div>
                 </div>
@@ -84,20 +84,20 @@
                 </div>
             </div>
         </div>
-        <div class="px-4 py-3 mx-4 mb-4 ">
-            <div class="shadow-sm bg-color-white-3 border rounded-3 p-4" style="min-height: 200px;" id="id_orderContainer">
+        <div class="px-4 py-3 mx-4 mb-4 mx-auto">
+            <div class="shadow-sm bg-color-white-3 border rounded-3 p-4" style="min-height: 200px; min-width:330px" id="id_orderContainer">
                 <div class="text-center p-2">
                     <div class="h1">Products</div>
                     <div class="h6"><?php echo $result_product->num_rows." products" ?></div>
                 </div>
                 <div class="spanLineFull-sm"></div>
                 
-                <div class="d-flex flex-wrap ms-auto p-4" id="id_itemContainer">
+                <div class="d-flex flex-wrap ms-auto p-4" id="id_itemContainer" >
                     <?php 
                         while ($data_product=mysqli_fetch_array($result_product))
                         {
                             $element = '
-                            <div class="card shadow-sm me-4 mb-4 " style="width:250px; height: 370px;">
+                            <div class="card shadow-sm me-4 mb-4 " style="width:250px; height: 370px; min-width:250px">
                                 
                                 <a href="productInfoPage.php?id='.$data_product["ProductID"].'" class="text-decoration-none on-hover-darken">
                                     <div  class="card-img-top pt-2 text-center "><img src="'.$data_product["ProductPicture"].'" alt="Product image" class="" style="width:230px; height: 230px"></div>

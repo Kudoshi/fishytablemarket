@@ -135,7 +135,7 @@ function subcategory_getData($con, $subCategoryID)
 }
 // Returns the category fa icon element
 function print_categoryIcon($con, $subCategoryID)
-{
+{    
     $sql = "SELECT CategoryID FROM subcategory 
     WHERE SubCategoryID = '".$subCategoryID."'";
     $result = mysqli_query($con, $sql) or die(mysqli_error($con));

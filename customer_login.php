@@ -7,6 +7,7 @@
 
         $sql = "SELECT * FROM customer WHERE CustEmail = '$email' AND CustPassword = '$password'";
         $result = mysqli_query($con, $sql) or die(mysqli_error($con));
+        print_r($result);
         if (!$result->num_rows>0)//If no record
         {
             echo "No login credentials found";
@@ -53,6 +54,10 @@
             <div class="mt-4">
                 <input type="submit" class="btn btn-primary" name="loginBtn">
             </div>
+
+            To seller login instead:
+            <a href="seller_login.php">Seller Login</a>
+
         </form>
     </div>
     
