@@ -233,7 +233,7 @@
             '<div class="some-padding">
               <div class="card some-padding" style="width:300px; height:500px;">
                 <a href="productInfoPage.php?id='.$data["ProductID"].'">
-                  <img class="card-img-top" src="'.$data["ProductPicture"].'" alt="Product image" style="width:100%">
+                  <img class="card-img-top" src="'.$data["ProductPicture"].'" alt="Product image" style="width:238px;height:238px;">
                   <div class="card-body">
                     <p class="card-title">'.$data["ProductName"].'</p>
                     <hr style="width: 100%;">
