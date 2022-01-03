@@ -27,11 +27,11 @@ $sql = mysqli_query($con, "SELECT * FROM (((productcartlist INNER JOIN cart ON p
             while ($data = mysqli_fetch_array($sql)) {
                 $cartID = $data["CartID"];
                 $cartData = '
-                    <div class="flex-container-row" style="background-color:rgba(113, 255, 255, 0.204); width:70%; border-radius:10px;">
+                    <div class="flex-container-row" style="background-color:rgba(113, 255, 255, 0.204); width:70%; border-radius:10px; height:500px;">
                         <!-- image -->
-                        <div class="card some-margin border-dark" style="width:300px; height: auto;">
+                        <div class="card some-margin border-dark" style="width:400px; height: 400px;">
                             <a href="productInfoPage.php?id='.$data["ProductID"].'">
-                                <img class="card-img-top" src="'.$data["ProductPicture"].'" alt="Product image" style="width:100%">
+                                <img class="card-img-top" src="'.$data["ProductPicture"].'" alt="Product image" style="width:100%;height:300px;">
                                 <div class="card-body">
                                     <h4 class="card-title text-center">'.$data["ProductName"].'</h4>
                                 </div>
