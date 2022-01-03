@@ -1,0 +1,240 @@
+/* container */
+.flex-container-column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-container-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.no-center-div-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.no-center-div-col {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.container-cate {
+    position: relative; 
+    width: 100%;
+}
+
+
+/* component: title, btn, ... */
+.right-side-title {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 150px;
+    width: 100%;
+    background-color:rgba(173, 179, 173, 0.342);
+}
+
+.shop-title {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    width: 60%;
+    background-color: rgba(253, 253, 253, 0.966)
+}
+
+.title-text {
+    margin-right: 100px;
+    color: black;
+}
+
+.product-info {
+    background-color: rgba(255, 255, 255, 0.753);
+    border-radius: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.btn-style {
+    background-color: black;
+    border-radius: 15px;
+    color:white;
+    border: 3px sold black;
+}
+
+.btn-img-icon {
+    width: 25px;
+    height:25px;
+}
+
+.right-side-btn {
+    display: flex;
+    width: 60%;
+    justify-content: end;
+}
+
+.review-comment {
+    background-color: white; 
+    width:90%; 
+    margin-bottom:20px;
+}
+.quantity {
+    display: flex;
+    justify-content: center;
+}
+
+.quantity input {
+    border-top: 1px sold black;
+    border-bottom: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+    text-align: center;
+    width:130px;
+    font-size: 35px;
+}
+
+.checked {
+    color: rgba(98, 82, 238, 0.719);
+}
+
+/* some grouped effect */
+/* 1st For category hover on img got text effect */
+.container-cate {
+    position: relative; 
+    width: 100%;
+}
+
+.cate-effect {
+    cursor:pointer;
+}
+
+.img-style {
+    opacity: 1;
+    border-radius: 40%;
+    display: block;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+
+.container-cate:hover .img-style {
+    opacity: 0.3;
+}
+
+.container-cate:hover .middle {
+    opacity: 1;
+}
+
+.text {
+    background-color: #71ccf0af;
+    color: white;
+    font-size: 20px;
+    padding: 16px 32px;
+}
+
+/* 2nd zoom in effect (when hover on img) */
+
+.zoomIn {
+    width: 300px;
+    height: 240px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.zoomIn img {
+    width: 100%;
+    transition:0.5s all ease-in-out;
+}
+
+.zoomIn:hover img{
+    transform: scale(1.5);
+}
+
+.main-product-img {
+    width: 380px;
+    height: 380px;
+    overflow: hidden;
+    border-radius: 15px;
+    border-width: 15px;
+}
+
+.main-product-img img {
+    width: 100%;
+    border-radius: 15px;
+    transition:0.5s all ease-in-out;
+}
+
+.main-product-img:hover img{
+    transform: scale(1.5);
+}
+
+/* Work with JS */
+#content-main {
+    display: block;
+}
+
+#organic, #fishery {
+    display: none;
+}
+
+/* Text effect / useful for making margin or padding / background */
+.some-padding {
+    padding: 30px;
+}
+
+.some-margin {
+    margin: 30px;
+}
+
+.main-bg {
+    background-image: url('../image/green-organic-background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.blue-sky-bg {
+    background-image: url('../image/blue_sky_trans.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    /* filter: blur(8px);
+    -webkit-filter: blur(8px); */
+}
+
+
+.vl {
+    border-left: 4px solid brown;
+    height: 120px;
+}
+
+hr {
+    border: 1px solid black;
+    width: 80%;
+    size: 5;
+    color: black;
+}
+
+h2 {
+    font-size: 70px;
+}
+
+a {
+    text-decoration: none;
+    color:black;
+}

@@ -1,14 +1,15 @@
-<?php require "resources/customer_db_util.php";?>
+<?php require "resources/conn.php";?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Header/footer usage</title>
 
-    <!-- You can more stuff here if you want -->
+    
     <?php require "import_headInfo.php"; ?>
+    <!-- More stuff can be put below here -->
 </head>
 <body>
-    
+    <?php require "header.php"; ?>
     <br><br><br>
 
     Hello some sample content

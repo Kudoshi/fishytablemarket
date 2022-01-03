@@ -9,7 +9,7 @@
                         Information
                     </h5>
                     <a href="#Terms and Condition"  class="text-white text-decoration-none">Terms and Condition</a><br>
-                    <a href="#About Us"  class="text-white text-decoration-none">About Us</a><br>
+                    <a href="aboutusPage.php"  class="text-white text-decoration-none">About Us</a><br>
                     <a href="#Privacy Policy"  class="text-white text-decoration-none">Privacy Policy</a>
                 </div>
         
@@ -50,3 +50,4 @@
             Copyright © 2021 Fishytable Market & APU Web Solutions Sdn. Bhd.
         </div>
     </footer>
+    <?php mysqli_close($con);?>
