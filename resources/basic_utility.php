@@ -12,8 +12,9 @@ function generate_ratingStar($rating, $additionalClass = "fs-5 text-primary ")
         }
         else
         {
-            $e_rating .= '<span class="'.$additionalClass.' pe-1 fa fa-star-o"></span>';
+            $e_rating .= '<span class="'.$additionalClass.' pe-1 far fa-star"></span>';
         }
+        js_ConsoleLog($temp_rating);
         $temp_rating ++;
     }
     return $e_rating;

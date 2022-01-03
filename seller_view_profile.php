@@ -30,7 +30,7 @@
         </div>
         <div class="my-4 ">
             
-            <div class="bg-color-white-2 mx-auto p-4 shadow-sm border rounded-3" style="max-width: 85%; min-width:470px">
+            <div class="bg-color-white-2 mx-auto p-4 shadow-sm border rounded-3" style="max-width: 97%; min-width:470px">
                 <div class="fs-3 text-center bi bi-info-circle text-primary"></div>
                 <div class="p-2 text-center h6">This is the customer's view on your shop page
                 </div>

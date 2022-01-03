@@ -6,7 +6,7 @@
                     <h5 class="text-uppercase fw-bold mb-3">
                         Information
                     </h5>
-                    <a href="#Terms and Condition"  class="text-white text-decoration-none">Terms and Condition</a><br>
+                    <a href="terms_and_condition.php"  class="text-white text-decoration-none">Terms and Condition</a><br>
                     <a href="#About Us"  class="text-white text-decoration-none">About Us</a><br>
                     <a href="#Privacy Policy"  class="text-white text-decoration-none">Privacy Policy</a>
                 </div>
@@ -15,11 +15,12 @@
                     <h5 class="text-uppercase fw-bold mb-3">
                         Quick Link
                     </h5>
-                    <a href="Seller Page"  class="text-white text-decoration-none text-nowrap">Seller Page</a><br>
-                    <a href="$Cust Login"  class="text-white text-decoration-none text-nowrap">Customer Login</a><br>
-                    <a href="#Fishery"  class="text-white text-decoration-none text-nowrap">Fishery</a><br>
-                    <a href="#Organic"  class="text-white text-decoration-none text-nowrap">Organic</a><br>
-                    
+                    <a href="seller_home.php"  class="text-white text-decoration-none text-nowrap">Seller Home</a><br>
+                    <a href="seller_products.php"  class="text-white text-decoration-none text-nowrap">Manage Products</a><br>
+                    <a href="seller_orders.php"  class="text-white text-decoration-none text-nowrap">Check Orders</a><br>
+                    <a href="seller_view_profile.php"  class="text-white text-decoration-none text-nowrap">View Shop</a><br>
+                    <a href="homePage.php"  class="text-white text-decoration-none text-nowrap">Customer Home</a><br>
+
                 </div>
 
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-3">
@@ -35,9 +36,9 @@
                     Follow Us
                     </h5>
                     <p>
-                    <a href="#Facebook" class="text-reset text-decoration-none">Facebook</a><br>
-                    <a href="#Instagram" class="text-reset text-decoration-none">Instagram</a><br>
-                    <a href="#Twitter" class="text-reset text-decoration-none">Twitter</a>
+                    <a href="https://www.facebook.com" class="text-reset text-decoration-none">Facebook</a><br>
+                    <a href="https://www.instagram.com" class="text-reset text-decoration-none">Instagram</a><br>
+                    <a href="https://www.twitter.com" class="text-reset text-decoration-none">Twitter</a>
                     </p>
                 </div>
             </div>

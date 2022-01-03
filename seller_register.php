@@ -233,7 +233,7 @@
                 <div class="row w-100 pb-4">
                     <div class="col-sm-3 h6"></div>
                     <div class="col-sm-6 input-group-sm px-4 text-center">
-                        <img id="picPlaceholder" class="text-center bg-color-white-4 border border-5" style="width:20vh;height:20vh;">
+                        <img id="id_picPlaceHolder" class="text-center bg-color-white-4 border border-5" style="width:20vh;height:20vh;">
                     </div>
                     <div class="col-sm-3"></div>
                 </div>
@@ -252,6 +252,7 @@
     <script>
         function displayImg(event){
             var image = document.getElementById('id_picPlaceHolder');
+            console.log(image);
             try{
                 fileFormat = event.target.files[0].name.substring(event.target.files[0].name.lastIndexOf('.')+1, event.target.files[0].name.length);
                 

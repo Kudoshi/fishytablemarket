@@ -26,7 +26,10 @@
             return;
         }
         else{ //Login
-
+            unset($_SESSION);
+            session_destroy();
+            session_start();
+            
             $data = mysqli_fetch_array($result);
             $_SESSION["SellerData"] = $data;
             header("Location: seller_home.php");

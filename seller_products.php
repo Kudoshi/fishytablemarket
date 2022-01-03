@@ -1,6 +1,7 @@
 <?php require "resources/conn.php"?>
 <?php require "resources/seller_utility.php"?>
 <?php require "resources/seller_security.php"?>
+<?php require "resources/basic_utility.php"?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

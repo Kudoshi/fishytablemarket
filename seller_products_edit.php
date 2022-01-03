@@ -87,8 +87,8 @@
         // Control Redirect
         if ($errorMsg === "") //SUCCESS
         {
-            $_SESSION["SuccessMessage"] = "Product Updated";
-            header("Location: seller_products_edit.php?ProductID=".$productID);
+            $_SESSION["Message"] = "Product Updated";
+            header("Location: seller_products_info.php?ProductID=".$productID);
             return;
         }
         else //ERROR
@@ -131,7 +131,13 @@
    $result = mysqli_query($con, $sql) or die(mysqli_error($con));
    $data = mysqli_fetch_array($result);
    
+   //Reviews
+   //Ratings
 
+
+
+
+   //Prevent seller from accessing product they do not own
    if ($data["SellerID"] != $_SESSION["SellerData"]["SellerID"])
    {
         header("Location: seller_products.php");

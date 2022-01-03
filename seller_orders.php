@@ -86,7 +86,7 @@
                         'SELECT * 
                         FROM productcartlist
                         INNER JOIN product ON product.ProductID = productcartlist.ProductID
-                        WHERE productcartlist.CartID = '.$row["CartID"];
+                        WHERE product.SellerID = "'.$_SESSION["SellerData"]["SellerID"].'" AND productcartlist.CartID = '.$row["CartID"];
 
                         $resultRecords = mysqli_query($con, $sqlRecords) or die(mysqli_error($con));
                         
@@ -94,6 +94,7 @@
                         $totalQuantity = 0;
                         while ($record =mysqli_fetch_array($resultRecords))
                         {
+                            $totalPrice += $record["Quantity"]*$record["UnitPrice"];
                             $totalQuantity ++;
                             $element .=
                             '<tr>
@@ -118,7 +119,7 @@
                                             <tr>
                                                 <td></td>
                                                 <td>'.$totalQuantity.'</td>
-                                                <td>RM '.number_format($row["TotalPrice"], 2).'</td>
+                                                <td>RM '.number_format($totalPrice, 2).'</td>
                                             </tr>
                                         </tbody>    
                                     
