@@ -54,7 +54,7 @@
 
 <!-- Content -->
 <div class="flex-container-row bg-color-blue-3">
-  <div class="main-product-img mt-2" style="some-margin" style="width:30%;">
+  <div class="main-product-img mt-2" style="width:30%;">
       <img src="<?php echo $data["ProductPicture"];?>" alt="Product_Pic" style="width:500px;height:500px;">
   </div>
   <div class="flex-container-column p-4 ms-4" style="width:800px;">
@@ -101,22 +101,22 @@
         <?php
         if (isset($_SESSION["CustID"])) {
           echo 
-          '<form id="add-to-cart">
-          <div class="quantity mt-5 mb-5" style="margin-top:8px;">
+          '<form id="add-to-cart" class="was-validated">
+            <div class="quantity mt-5 mb-5" style="margin-top:8px;">
               <label class="me-3 mt-2" style="align-items:center;"><h3>Quantity:</h3></label>
               <button type="button" class="btn btn-primary minus-btn" style="width:37px">-</button>
-              <input type="number" min="1" name="quantity" required value="1">
+              <input min="1" name="quantity" value="1" pattern="[0-9]{1,}">
               <button  type="button" class="btn btn-primary plus-btn" style="width:37px">+</button>
               <input type="hidden" value="'.$id.'" name="productID">
               <button type="submit" class="btn btn-secondary ms-4"><h5>Add to Cart</h5></button>
-          </div>
+            </div>
         </form>';
         }
         else {
-          echo '<div class="quantity mt-5 mb-5" style="margin-top:8px;">
+          echo '<div class="quantity mt-5 mb-5" style="margin-top:8px;" class="was-validated">
           <label class="me-3 mt-2" style="align-items:center;"><h3>Quantity:</h3></label>
           <button type="button" class="btn btn-primary minus-btn" style="width:37px">-</button>
-          <input type="number" min="1" name="quantity" required value="1">
+          <input min="1" name="quantity" value="1" pattern="[0-9]{1,}">
           <button  type="button" class="btn btn-primary plus-btn" style="width:37px">+</button></div>
           <a href="customer_login.php" class="btn btn-secondary ms-4">Login Before Purchase :)</a>';
         }

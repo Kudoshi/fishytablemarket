@@ -16,9 +16,10 @@
     date_default_timezone_set("Asia/Kuala_Lumpur");
     $date = date("y-m-d");
 
-
+    $recipientAddress = htmlspecialchars($body['recipientAddress']);
+    
     $sql = "INSERT INTO orders (RecipientName, RecipientAddress, RecipientTelephone, OrderDate, CartID, totalprice)
-    VALUES ('$body[recipientName]','$body[recipientAddress]','$body[recipientPhone]', '$date', '$body[CartID]','$body[totalPrice]')";
+    VALUES ('$body[recipientName]','$recipientAddress','$body[recipientPhone]', '$date', '$body[CartID]','$body[totalPrice]')";
     if (!mysqli_query($con, $sql)) {
         $response["error"] = 'Error:'.mysqli_error($con);
     }

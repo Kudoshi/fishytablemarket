@@ -50,6 +50,6 @@
     // $response["productcartID"] = $productCartListID;
     $cartQuery = mysqli_query($con,"SELECT ProductCartListID, CustID FROM productcartlist INNER JOIN cart ON ProductCartList.CartID = cart.CartID WHERE cart.CustID = ".$_SESSION["CustID"]." AND cart.CartPaid = 0");
     $cartQty = mysqli_num_rows($cartQuery);
-    $response["cartQty"] = $cartQty;
+    // $response["cartQty"] = $cartQty;
     echo json_encode($response); //convert php object into js object
 ?>
