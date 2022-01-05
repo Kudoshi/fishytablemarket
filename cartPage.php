@@ -65,7 +65,7 @@ $sql = mysqli_query($con, "SELECT * FROM (((productcartlist INNER JOIN cart ON p
                     <hr>
                     <br>
                     ';
-                    
+                    // 
                     // <a href = "" class="deleteBtn" id="'.$data["ProductID"].'">
                     //     <img src="image/lapsap_icon.png" alt="delete_icon" class="btn-img-icon ms-5" title="Delete this item?" data-bs-toggle="popover" data-bs-trigger="hover">
                     // </a>
@@ -83,16 +83,16 @@ $sql = mysqli_query($con, "SELECT * FROM (((productcartlist INNER JOIN cart ON p
             //         var btnclicked = event.target.id;
             //         var productID = btnclicked.id;
             //         console.log(btnclicked);
-            //         // fetch("deleteCart.php", {
-            //         //     method: "POST",
-            //         //     headers: {
-            //         //         'Content-Type': 'application/json',
-            //         //     },
-            //         //     body: JSON.stringify(formData) //pass the formData, turn json into string (can't submit object, php can't read)
-            //         // })
-            //         //     .then(function(res){ //wait the result come back
-            //         //         return res.json()  //get response value, return to next .then
-            //         //     })
+            //         fetch("deleteCart.php", {
+            //             method: "POST",
+            //             headers: {
+            //                 'Content-Type': 'application/json',
+            //             },
+            //             body: JSON.stringify(formData) //pass the formData, turn json into string (can't submit object, php can't read)
+            //         })
+            //             .then(function(res){ //wait the result come back
+            //                 return res.json()  //get response value, return to next .then
+            //             })
             //     })
             // }
         </script>
