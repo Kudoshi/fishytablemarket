@@ -27,11 +27,11 @@ $sql = mysqli_query($con, "SELECT * FROM (((productcartlist INNER JOIN cart ON p
             while ($data = mysqli_fetch_array($sql)) {
                 $cartID = $data["CartID"];
                 $cartData = '
-                    <div class="flex-container-row" style="background-color:rgba(113, 255, 255, 0.204); width:70%; border-radius:10px; height:auto;">
+                    <div class="flex-container-row" style="background-color:rgba(113, 255, 255, 0.204); width:70%; border-radius:10px;">
                         <!-- image -->
-                        <div class="card some-margin border-dark" style="width:300px; height: 400px;">
+                        <div class="card some-margin border-dark" style="width:300px; height: auto;">
                             <a href="productInfoPage.php?id='.$data["ProductID"].'">
-                                <img class="card-img-top" src="'.$data["ProductPicture"].'" alt="Product image" style="width:100%;height:300px;">
+                                <img class="card-img-top" src="'.$data["ProductPicture"].'" alt="Product image" style="width:100%">
                                 <div class="card-body">
                                     <h4 class="card-title text-center">'.$data["ProductName"].'</h4>
                                 </div>
@@ -49,7 +49,7 @@ $sql = mysqli_query($con, "SELECT * FROM (((productcartlist INNER JOIN cart ON p
                             <div class="quantity mb-5" style="margin-top:8px;">
                                 <label class="me-3"><h3>Quantity:</h3></label>
                                 <button type="button" class="btn btn-primary minus-btn" style="width:37px">-</button> 
-                                <input type="number" value="'.$data["Quantity"].'" min="1" disabled>
+                                <input type="number" value="'.$data["Quantity"].'" min="1">
                                 <button  type="button" class="btn btn-primary plus-btn" style="width:37px">+</button>
                             </div>
                             <div class="flex-container-row justify-content-end mb-4">    
@@ -65,10 +65,11 @@ $sql = mysqli_query($con, "SELECT * FROM (((productcartlist INNER JOIN cart ON p
                     <hr>
                     <br>
                     ';
-                    // 
+                    
                     // <a href = "" class="deleteBtn" id="'.$data["ProductID"].'">
                     //     <img src="image/lapsap_icon.png" alt="delete_icon" class="btn-img-icon ms-5" title="Delete this item?" data-bs-toggle="popover" data-bs-trigger="hover">
                     // </a>
+                    
                 echo $cartData;
             }
         ?>
@@ -83,16 +84,16 @@ $sql = mysqli_query($con, "SELECT * FROM (((productcartlist INNER JOIN cart ON p
             //         var btnclicked = event.target.id;
             //         var productID = btnclicked.id;
             //         console.log(btnclicked);
-            //         fetch("deleteCart.php", {
-            //             method: "POST",
-            //             headers: {
-            //                 'Content-Type': 'application/json',
-            //             },
-            //             body: JSON.stringify(formData) //pass the formData, turn json into string (can't submit object, php can't read)
-            //         })
-            //             .then(function(res){ //wait the result come back
-            //                 return res.json()  //get response value, return to next .then
-            //             })
+            //         // fetch("deleteCart.php", {
+            //         //     method: "POST",
+            //         //     headers: {
+            //         //         'Content-Type': 'application/json',
+            //         //     },
+            //         //     body: JSON.stringify(formData) //pass the formData, turn json into string (can't submit object, php can't read)
+            //         // })
+            //         //     .then(function(res){ //wait the result come back
+            //         //         return res.json()  //get response value, return to next .then
+            //         //     })
             //     })
             // }
         </script>
