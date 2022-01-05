@@ -1,4 +1,4 @@
-<?php require "resources/conn.php";?>
+<?php require "resources/conn.php"; require "resources/basic_utility.php";?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -238,7 +238,10 @@
                     <p class="card-title">'.$data["ProductName"].'</p>
                     <hr style="width: 100%;">
                     <p>['.$data["SellerName"].']</p>
-                    <h4 class="card-text"> RM'.$data["Price"].'</h4>
+                    <div class="d-flex align-items-center justify-content-between">
+                      <h4 class="card-text"> RM'.$data["Price"].'</h4>
+                      <span class="fs-4 px-3 py-3 '.print_categoryIcon($con, $data["SubCategoryID"]).'"></span>
+                    </div>
                   </div>
                 </a>
               </div>

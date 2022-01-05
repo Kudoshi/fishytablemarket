@@ -21,5 +21,21 @@ function generate_ratingStar($rating, $additionalClass = "fs-5 text-primary ")
     return $e_rating;
 }
 
+// Returns the category fa icon element
+function print_categoryIcon($con, $subCategoryID)
+{    
+    $sql = "SELECT CategoryID FROM subcategory 
+    WHERE SubCategoryID = '".$subCategoryID."'";
+    $result = mysqli_query($con, $sql) or die(mysqli_error($con));
+    $data =  mysqli_fetch_array($result);
+    if ($data["CategoryID"] == "ORGACA")
+    {
+        return "fas fa-leaf text-success";
+    }
+    else
+    {
+        return "fas fa-fish text-primary";
+    }
+}
 
 ?>
