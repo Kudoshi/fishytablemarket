@@ -20,26 +20,15 @@ $data = mysqli_fetch_array($custid);
         <div class="row justify-content-center">
             <div class="col-12 col-lg-10 col-xl-8 mx-auto">
                 <form>
-                    <div class="row mt-5 align-items-center">
-                        <div class="col-md-3 text-center mb-5">
+                    <div class="mt-5 align-items-center">
+                        <div>
                             <div class="avatar avatar-xl">
-                                <img src="image/smile.png" alt="..." class="avatar-img rounded-circle" />
+                            <div class="text-center"><h4 class="mb-1"><?php echo $data['CustName']?></h4>
                             </div>
                         </div>
-                        <div class="col">
-                            <div class="row align-items-center">
-                                <div class="col-md-7">
-                                    <h4 class="mb-1"><?php echo $data['CustName']?></h4>
-                                </div>
-                            </div>
-                            <div class="row mb-4">
-                                <div class="col-md-7">
-                                    <p class="text-muted">
-                                        Joined on 18th November 2021<br>
-                                        Website visited 32 times<br>
-                                        Pending Order: 3
-                                    </p>
-                                </div>
+                        <div class="text-center mb-5">
+                            <div class="avatar avatar-xl">
+                            <div class="bi bi-person-circle display-1"></div>
                             </div>
                         </div>
                     </div>

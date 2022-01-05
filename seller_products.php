@@ -65,7 +65,6 @@
     <script>
         function LoadItemList(category="ALL")
         {
-            console.log(category);
             const xhttp = new XMLHttpRequest();
             xhttp.onload = function() {
                 document.getElementById('id_itemContainer').innerHTML = this.responseText;

@@ -32,7 +32,7 @@ $data = mysqli_fetch_array($subcategory);
                                     <img src = "'.$row["ProductPicture"].'" alt = "product image" width="200px" height="200px">
                                 </div>
                                 <div class = "product-btns">
-                                <a href="#.php">
+                                <a href="productInfoPage.php?id='.$row["ProductID"].'">
                                 <button type = "button" class = "btn-cart"> View
                                         <span><i class = "fas fa-plus"></i></span>
                                     </button>
@@ -43,7 +43,7 @@ $data = mysqli_fetch_array($subcategory);
                             <div class = "product-info">
                                 <div class = "product-info-top">
                                 </div>
-                                <a href = "#" class = "product-name">'.$row["ProductName"].', New Product</a>
+                                <a href = "productInfoPage.php?id='.$row["ProductID"].'" class = "product-name">'.$row["ProductName"].', New Product</a>
                                 <p class = "product-price">'.$row["Price"].'</p>
                             </div>
                         </div>

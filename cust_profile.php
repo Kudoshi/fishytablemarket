@@ -24,7 +24,8 @@ $data = mysqli_fetch_array($custid);
                     <div class="row m-l-0 m-r-0">
                         <div class="col-sm-4 bg-c-lite-green user-profile">
                             <div class="card-block text-center text-white">
-                                <div class="m-b-25"> <img src="image/smile.png" width= 80%; height= 80%; object-fit= cover; border-radius= 50%;> </div>
+                                <div class="m-b-25">
+                                <div class="bi bi-person-circle display-1"></div></div>
                                 <h6 class="f-w-600"><?php echo $data['CustName'];?></h6>
                                 <p>Customer</p> <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
                             </div>
