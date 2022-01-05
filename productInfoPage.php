@@ -159,7 +159,7 @@
                     document.querySelector("#cartLink").append(cartQty)
                   }
                   cartQty.innerText = response.cartQty
-                  // notes: below will cause performance slower as this is another request
+                  // notes: below will causes performance slower as this is another request
                   // var xmlhttp = new XMLHttpRequest();
                   // xmlhttp.onreadystatechange = function() {
                   //   if (this.readyState == 4 && this.status == 200) {
