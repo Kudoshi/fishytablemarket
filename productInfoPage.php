@@ -129,7 +129,7 @@
           <button type="button" class="btn btn-primary minus-btn" style="width:37px">-</button>
           <input min="1" name="quantity" value="1" pattern="[0-9]{1,}">
           <button  type="button" class="btn btn-primary plus-btn" style="width:37px">+</button></div>
-          <a href="customer_login.php" class="btn btn-secondary ms-4">Login Before Purchase :)</a>';
+          <a href="cust_login.php" class="btn btn-secondary ms-4">Login Before Purchase :)</a>';
         }
           
         ?>
