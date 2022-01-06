@@ -165,12 +165,12 @@
 
                   let cartQty = document.querySelector("#cartQty");
                   if(!cartQty){
-                    cartQty = document.createElement('span')
-                    cartQty.id = "cartQty"
-                    cartQty.setAttribute("class", "position-absolute top-0 start-100 translate-middle badge bg-warning rounded-pill text-dark")
-                    document.querySelector("#cartLink").append(cartQty)
+                    cartQty = document.createElement('span');
+                    cartQty.id = "cartQty";
+                    cartQty.setAttribute("class", "position-absolute top-0 start-100 translate-middle badge bg-warning rounded-pill text-dark");
+                    document.querySelector("#cartLink").append(cartQty);
                   }
-                  cartQty.innerText = response.cartQty
+                  cartQty.innerText = response.cartQty;
                   // notes: below will causes performance slower as this is another request
                   // var xmlhttp = new XMLHttpRequest();
                   // xmlhttp.onreadystatechange = function() {

@@ -7,7 +7,7 @@
                         Information
                     </h5>
                     <a href="terms_and_condition.php"  class="text-white text-decoration-none">Terms and Condition</a><br>
-                    <a href="#About Us"  class="text-white text-decoration-none">About Us</a><br>
+                    <a href="aboutusPage.php"  class="text-white text-decoration-none">About Us</a><br>
                 </div>
         
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-3" id="hi">
@@ -26,7 +26,7 @@
                     <h5 class="text-uppercase fw-bold mb-3">
                     Customer Service
                     </h5>
-                    <a href="#ContactUs" class="text-white text-decoration-none">Contact Us</a><br>
+                    <a href="contactus.php" class="text-white text-decoration-none">Contact Us</a><br>
 
                 </div>
 

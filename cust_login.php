@@ -69,7 +69,7 @@
                            <button class="btn btn-primary float-start" name="loginBtn">Login Now</button>
                     </div>
                 </form>
-                <p class="text-center mt-3 text-secondary">If you don't have an account, Please <a href="cust_signup.php">SignUp Now!</a> <br>To <a href="#SellerLogin">Seller Login!</a></p>
+                <p class="text-center mt-3 text-secondary">If you don't have an account, Please <a href="cust_signup.php">SignUp Now!</a> <br>To <a href="seller_login.php">Seller Login!</a></p>
             </div>
         </div>
     </div>
