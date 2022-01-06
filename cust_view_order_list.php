@@ -51,7 +51,6 @@ $html_script =
     echo $html_script;
 }
     ?>
-    <a href="try.php" class="btn btn-dark btn-lg active" role="button" aria-pressed="true">Ratings & Feedback</a> 
 <br><br><br>
             
 
