@@ -1,7 +1,5 @@
 <?php
-    if (!isset($_SESSION["CustID"])) {
-        die("Please login before you access.");
-    }
+
     if(!isset($_POST))
     return;
 
