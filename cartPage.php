@@ -1,4 +1,7 @@
 <?php require "resources/conn.php";
+if (!isset($_SESSION["CustID"])) {
+    die("Please login before you access.");
+}
 $sql = mysqli_query($con, "SELECT * FROM (((productcartlist INNER JOIN cart ON productcartlist.CartID = cart.CartID) INNER JOIN product ON productcartlist.ProductID =product.ProductID) INNER JOIN seller ON product.SellerID = seller.SellerID) INNER JOIN customer ON cart.CustID = customer.CustID WHERE cart.CustID = ".$_SESSION['CustID']." AND cart.CartPaid = 0");
 // $numOfCart = mysqli_num_rows($sql);
 
@@ -73,6 +76,7 @@ $sql = mysqli_query($con, "SELECT * FROM (((productcartlist INNER JOIN cart ON p
                 echo $cartData;
             }
         ?>
+        <form></form>
         <script>
             // var deleteBtn = document.getElementsByClassName('deleteBtn');
             // var numOfdeleteBtn = deleteBtn.length;
@@ -119,10 +123,10 @@ $sql = mysqli_query($con, "SELECT * FROM (((productcartlist INNER JOIN cart ON p
                 <a href="checkoutPage.php" type="button" class="btn btn-warning"><h5>BUY NOW</h5></a>
             </div>
         </div>
-        <!-- <script src="js/ml_js.js"></script> -->
+
         <?php require "footer.php";?>
         <script>
-            // PLUS & MINUS Button
+            // PLUS & MINUS Button (With update quantity using ajax)
             // ----------------------
             // cite: https://www.youtube.com/watch?v=2purijiQrf4
             var plusButton = document.getElementsByClassName('plus-btn');
@@ -144,6 +148,7 @@ $sql = mysqli_query($con, "SELECT * FROM (((productcartlist INNER JOIN cart ON p
                     // Getting productcartlist ID
                     var findID = buttonClicked.parentElement.parentElement.children[0].value;
                         console.log(findID);
+
                     //update quantity into database and show it
                     updateQty(newValue,findID);
                     input.value = newValue;

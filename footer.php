@@ -10,7 +10,6 @@
                     </h5>
                     <a href="terms_and_condition.php"  class="text-white text-decoration-none">Terms and Condition</a><br>
                     <a href="aboutusPage.php"  class="text-white text-decoration-none">About Us</a><br>
-                    <a href="#Privacy Policy"  class="text-white text-decoration-none">Privacy Policy</a>
                 </div>
         
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-3" id="hi">
@@ -18,7 +17,7 @@
                         Quick Link
                     </h5>
                     <a href="seller_login.php"  class="text-white text-decoration-none text-nowrap">Seller Login</a><br>
-                    <a href="customer_login.php"  class="text-white text-decoration-none text-nowrap">Customer Login</a><br>
+                    <a href="cust_login.php"  class="text-white text-decoration-none text-nowrap">Customer Login</a><br>
                     <a href="homePage.php?type=organic"  class="text-white text-decoration-none text-nowrap">Organic</a><br>
                     <a href="homePage.php?type=fishery"  class="text-white text-decoration-none text-nowrap">Fishery</a><br>
                     
@@ -28,7 +27,7 @@
                     <h5 class="text-uppercase fw-bold mb-3">
                     Customer Service
                     </h5>
-                    <a href="#ContactUs" class="text-white text-decoration-none">Contact Us</a><br>
+                    <a href="contactus.php" class="text-white text-decoration-none">Contact Us</a><br>
 
                 </div>
 

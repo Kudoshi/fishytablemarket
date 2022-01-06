@@ -1,4 +1,7 @@
 <?php require "resources/conn.php";
+    if (!isset($_SESSION["CustID"])) {
+        die("Please login before you access.");
+    }
     $sql = mysqli_query($con, "SELECT * FROM (((productcartlist INNER JOIN cart ON productcartlist.CartID = cart.CartID) INNER JOIN product ON productcartlist.ProductID =product.ProductID) INNER JOIN seller ON product.SellerID = seller.SellerID) INNER JOIN customer ON cart.CustID = customer.CustID WHERE cart.CustID = ".$_SESSION['CustID']." AND cart.CartPaid = 0");
     $numOfCart = mysqli_num_rows($sql);
     if ($numOfCart == 0) {
@@ -48,63 +51,62 @@
                         <div class="invalid-feedback">Please fill out this field with valid input.</div>
                     </div>
                 </div>
-            <br><br>
-            <div class="bg-white flex-container-column" style="width:100%;">
-                <div class="display-5">PRODUCT ORDERED</div>
-                <br>
-                <div class="flex-container-column" style="width:90%">
-                    <table class="table table-hover h5">
-                        <thead class="table-light">
-                            <tr>
-                                <th>Product Name</th>
-                                <th>Unit Price (RM)</th>
-                                <th>Quantity</th>
-                                <th>Item Subtotal (RM)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $total = 0;
-                            while ($data = mysqli_fetch_array($sql)) {
-                                $cartID = $data["CartID"];
-                                $price = $data["Price"];
-                                $qty = $data["Quantity"];
-                                $subtotal = $price * $qty;
-                                $subtotal = number_format($subtotal,2);
-                                $total += $subtotal;
-                                $cartData ='<tr>
-                                    <td>
-                                        <div class="flex-container-row mt-1 mb-1 w-100" style="justify-content:start; align-items:start;">
-                                            <div class="w-30">
-                                                <img src="'.$data["ProductPicture"].'" alt="indian treadfin" style="width:150px; height: 150px; border-radius:20px;">
+                <br><br>
+                <div class="bg-white flex-container-column" style="width:100%;">
+                    <div class="display-5">PRODUCT ORDERED</div>
+                    <br>
+                    <div class="flex-container-column" style="width:90%">
+                        <table class="table table-hover h5">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Product Name</th>
+                                    <th>Unit Price (RM)</th>
+                                    <th>Quantity</th>
+                                    <th>Item Subtotal (RM)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $total = 0;
+                                while ($data = mysqli_fetch_array($sql)) {
+                                    $cartID = $data["CartID"];
+                                    $price = $data["Price"];
+                                    $qty = $data["Quantity"];
+                                    $subtotal = $price * $qty;
+                                    $subtotal = number_format($subtotal,2);
+                                    $total += $subtotal;
+                                    $cartData ='<tr>
+                                        <td>
+                                            <div class="flex-container-row mt-1 mb-1 w-100" style="justify-content:start; align-items:start;">
+                                                <div class="w-30">
+                                                    <img src="'.$data["ProductPicture"].'" alt="indian treadfin" style="width:150px; height: 150px; border-radius:20px;">
+                                                </div>
+                                                <div class="w-70 ms-3">
+                                                    '.$data["ProductName"].' <br><br>                                    
+                                                    <img src="image/shop_icon.png" alt="shop_icon" style="width:20px;height:20px;">
+                                                    '.$data["ShopName"].'
+                                                </div>    
                                             </div>
-                                            <div class="w-70 ms-3">
-                                                '.$data["ProductName"].' <br><br>                                    
-                                                <img src="image/shop_icon.png" alt="shop_icon" style="width:20px;height:20px;">
-                                                '.$data["ShopName"].'
-                                            </div>    
-                                        </div>
-                                    </td>
-                                    <td>'.$price.'</td>
-                                    <td>'.$qty.'</td>
-                                    <td>'.$subtotal.'</td>
-                                </tr>';
-                                echo $cartData;
-                            }
-                            ?>                            
-                            
-                        </tbody>
-                        <tfoot class="table-dark">
-                            <td colspan="2">Shipping Fee: RM10</td>
-                            <td>Total Change:</td>
-                            <td> RM<?php echo $totalPrice = number_format($total+10,2); //add shipping fee?></td>
-                        </tfoot>
-                    </table>
+                                        </td>
+                                        <td>'.$price.'</td>
+                                        <td>'.$qty.'</td>
+                                        <td>'.$subtotal.'</td>
+                                    </tr>';
+                                    echo $cartData;
+                                }
+                                ?>                            
+                                
+                            </tbody>
+                            <tfoot class="table-dark">
+                                <td colspan="2">Shipping Fee: RM10</td>
+                                <td>Total Change:</td>
+                                <td> RM<?php echo $totalPrice = number_format($total+10,2); //add shipping fee?></td>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="display-5">PAYMENT METHOD</div><br>
+                    <div class="display-6">CREDIT / DEBIT CARD</div><br>
                 </div>
-                <div class="display-5">PAYMENT METHOD</div><br>
-                <div class="display-6">CREDIT / DEBIT CARD</div><br>
-            </div>
-            <!-- <form class="was-validated flex-container-column bg-light pt-3 pb-3" id="form2" style="width:90%;"> -->
                 <div style="width:80%">
                 <br>
                     <div class="form-floating mb-3">

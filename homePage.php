@@ -9,13 +9,13 @@
 </head>
 <body>
   <?php require "header.php"; 
+  // Fetch products + seller
   $result_product = mysqli_query($con, "SELECT * FROM product INNER JOIN seller ON product.SellerID = seller.SellerID");
+  // Fetch subcategory data
   $subcategory = mysqli_query($con, "SELECT * FROM subcategory");
   // $data_sub = mysqli_fetch_array($subcategory);
   ?>
 
-
-  <!-- Content -->
   <div id="home" class="flex-container-column">
     <div class="flex-container-column" style="width:100%">
       <div style="padding:25px;">
