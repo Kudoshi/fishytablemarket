@@ -1,5 +1,5 @@
 <?php require "resources/conn.php";?>
-<?php require "resources/basic_utility.php";?>
+<?php require "resources/basic_utility.php";require "resources/seller_utility.php";?>
 <?php
     if (isset($_POST["registerBtn"])){
         $errorMsg = "";
@@ -52,8 +52,8 @@
             {
                 $errorMsg .= "<br>Error creating an account";
             }
-            else ("SELECT CustID FROM customer WHERE CustEmail = $email");
-            {mysqli_query ($con, $sql)
+            else ("SELECT CustID FROM customer WHERE CustEmail = $email")
+            {
                 $data = mysqli_fetch_array($result)};
         }
 
