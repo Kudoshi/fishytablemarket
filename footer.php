@@ -17,7 +17,7 @@
                         Quick Link
                     </h5>
                     <a href="seller_login.php"  class="text-white text-decoration-none text-nowrap">Seller Login</a><br>
-                    <a href="customer_login.php"  class="text-white text-decoration-none text-nowrap">Customer Login</a><br>
+                    <a href="cust_login.php"  class="text-white text-decoration-none text-nowrap">Customer Login</a><br>
                     <a href="homePage.php?type=organic"  class="text-white text-decoration-none text-nowrap">Organic</a><br>
                     <a href="homePage.php?type=fishery"  class="text-white text-decoration-none text-nowrap">Fishery</a><br>
                     
