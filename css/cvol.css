@@ -1,0 +1,48 @@
+body {
+    font: 14px Arial,sans-serif; 
+    margin: 0px;
+}
+.view-order {
+    padding: 10px 20px;
+    text-align: center;
+}
+.view-order-top {
+    font-size: 24px;
+}
+.view-order {
+    width: 100%;
+    background: #f2f2f2; 
+}
+.nav, .section {
+    float: left; 
+    padding: 20px;
+    min-height: 170px;
+    box-sizing: border-box;
+}
+.nav {            
+    width: 20%;             
+    background: #d4d7dc;
+}
+.section {
+    width: 80%;
+}
+.nav ul {
+    list-style: none; 
+    line-height: 24px;
+    padding: 0px; 
+}
+.nav ul li a {
+    color: #333;
+}    
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.footer {
+    background: #acb3b9;            
+    text-align: center;
+    padding: 5px;
+}

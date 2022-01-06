@@ -8,7 +8,6 @@
                     </h5>
                     <a href="terms_and_condition.php"  class="text-white text-decoration-none">Terms and Condition</a><br>
                     <a href="#About Us"  class="text-white text-decoration-none">About Us</a><br>
-                    <a href="#Privacy Policy"  class="text-white text-decoration-none">Privacy Policy</a>
                 </div>
         
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-3" id="hi">

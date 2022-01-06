@@ -23,16 +23,19 @@
                     <a href='homePage.php?type=fishery' class="nav-link" id="fisheryLink">Fishery</a>
 
                 </li>
-                <li class="nav-item">
-                    <a href="customer_login.php" class="nav-link">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#register" class="nav-link">Register</a>
-                </li>
+                <?php
+                    if (!isset($_SESSION["CustID"])) {
+                        echo '<li class="nav-item">
+                        <a href="cust_login.php" class="nav-link">Login</a>
+                        </li><li class="nav-item">
+                        <a href="cust_signup.php" class="nav-link">Register</a>
+                        </li>';
+                    }
+                ?>
                 <?php
                     if(isset($_SESSION["CustID"])){
                         echo  '<li class="nav-item">
-                        <a href="cust_profile.php" class="nav-link">Profile</a>
+                        <a href="cust_profile.php" class="nav-link"><span style="width:30px; height:30px" class="bi bi-person-circle"></span>Profile</a>
                         </li>';
                     }
                 ?>

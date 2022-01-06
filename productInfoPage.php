@@ -1,15 +1,20 @@
 <?php 
   require "resources/conn.php";
   $id = intval($_GET['id']);
-  
-  // Fetching product, seller, rating, and customer data that ONLY MATCH the product's ID
+
+  // Fetch product + seller data that ONLY MATCH the product's ID
   $result_product = mysqli_query($con, "SELECT * FROM product INNER JOIN seller ON product.SellerID = seller.SellerID WHERE product.ProductID=$id");
+  $data = mysqli_fetch_array($result_product);
+
+  // Fetch customer rating individually, that ONLY MATCH the product's ID. Fetch 2 times, 2nd time is to enable it to be used in while loop
   $result_rating = mysqli_query($con, "SELECT * FROM rating INNER JOIN customer ON rating.CustID = customer.CustID WHERE ProductID = $id");
   $result_rating2 = mysqli_query($con, "SELECT * FROM rating INNER JOIN customer ON rating.CustID = customer.CustID WHERE ProductID = $id");
-  $data = mysqli_fetch_array($result_product);
   $data2 = mysqli_fetch_array($result_rating);
+
+  // Get the number of ratings that the products possess
   $numOfRating = mysqli_num_rows($result_rating);
 
+  // A function that convert rating value into stars
   function fafaStar($type_of_rating, $size, $row) {
     $rating = intval($row[$type_of_rating]);
 
@@ -19,7 +24,12 @@
 
     $uncheck = '<span class="fa fa-star '.$size.'"></span>';
     
-    if ($rating == 1){
+    if ($rating == 0) {
+      for ($i=0; $i < 5; $i++) {
+        echo $uncheck;
+      }
+    }
+    elseif($rating == 1){
       for ($i = 0; $i < 4; $i++) {
         echo $uncheck;
       }
@@ -83,6 +93,7 @@
               <td><?php echo $data["ShippingMethod"];?></td>
             </tr>
             <tr>
+              <!-- Fixed part -->
               <td><b>Shipping Fee</b></td>
               <td>:</td>
               <td>RM 10</td>
@@ -123,6 +134,7 @@
           
         ?>
         <script>
+          // Using JSON, fetch & then to handle the front end
           const addToCartForm = document.querySelector("#add-to-cart");
           addToCartForm.addEventListener("submit",function(event){
             event.preventDefault();//dont allow refresh
