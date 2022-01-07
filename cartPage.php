@@ -52,7 +52,7 @@ $sql = mysqli_query($con, "SELECT * FROM (((productcartlist INNER JOIN cart ON p
                             <div class="quantity mb-5" style="margin-top:8px;">
                                 <label class="me-3"><h3>Quantity:</h3></label>
                                 <button type="button" class="btn btn-primary minus-btn" style="width:37px">-</button> 
-                                <input type="number" value="'.$data["Quantity"].'" min="1">
+                                <input type="number" value="'.$data["Quantity"].'" min="1" disabled>
                                 <button  type="button" class="btn btn-primary plus-btn" style="width:37px">+</button>
                             </div>
                             <div class="flex-container-row justify-content-end mb-4">    
