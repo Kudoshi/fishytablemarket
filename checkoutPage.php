@@ -209,20 +209,20 @@
                         // console.log(response)
                         // Check if got error, and display a nice alert box.
                         if(!response.error){
-                        Swal.fire({
-                            title: "Completed",
-                            icon: "success",
-                            text: "Purchase successfully"
-                        }).then(function(){
-                            window.location.href = "cartPage.php";
-                            });
-                        } 
+                            Swal.fire({
+                                title: "Completed",
+                                icon: "success",
+                                text: "Purchase successfully"
+                            }).then(function(){
+                                window.location.href = "cartPage.php";
+                                });
+                        }
                         else {
-                        Swal.fire({
-                            title: "Oops...Purchase failed.",
-                            icon: "error",
-                            text: response.error
-                        }) 
+                            Swal.fire({
+                                title: "Oops...Purchase failed.",
+                                icon: "error",
+                                text: response.error
+                            }) 
                         }
                     });
                 });

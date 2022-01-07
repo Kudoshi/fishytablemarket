@@ -38,7 +38,6 @@
         }
         
         if (!mysqli_query($con, $sql)) {
-            // die('Error:'.mysqli_error($con));
             $response["error"] = 'Error:'.mysqli_error($con);
         }
 
@@ -48,6 +47,8 @@
     // return back the data (key n value)
     // $response["productID"] = $body["productID"];
     // $response["productcartID"] = $productCartListID;
+
+    // Geting the number of cart (newest)
     $cartQuery = mysqli_query($con,"SELECT ProductCartListID, CustID FROM productcartlist INNER JOIN cart ON ProductCartList.CartID = cart.CartID WHERE cart.CustID = ".$_SESSION["CustID"]." AND cart.CartPaid = 0");
     $cartQty = mysqli_num_rows($cartQuery);
     $response["cartQty"] = $cartQty;
