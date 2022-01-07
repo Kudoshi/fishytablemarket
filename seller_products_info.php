@@ -86,9 +86,9 @@
                     <div class="px-2 pt-3">
                         <div class="col-1"></div>
                         <div class="col-10 d-flex flex-column align-items-start text-white">
-                            <div><span class="h6">Weight:</span> 100 gram</div>
-                            <div><span class="h6">Shipping Method:</span> Self-self delivery</div>
-                            <div><span class="h6">Date Added:</span> 21/5/2021</div>
+                            <div><span class="h6">Weight:</span> <?php echo $data_product["Weight"] ?> g</div>
+                            <div><span class="h6">Shipping Method:</span> <?php echo $data_product["ShippingMethod"] ?></div>
+                            <div><span class="h6">Date Added:</span> <?php echo $data_product["DateAdded"] ?></div>
                         </div>
                         <div class="col-1"></div>
                     </div>
