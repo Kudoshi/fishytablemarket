@@ -99,31 +99,6 @@
             return;
         }
    }
-   else if (isset($_POST["DeleteBtn"]))
-   {
-        $productID = $_POST["input_productID"];
-        $sqlGetData = "SELECT SellerID FROM product WHERE product.ProductID = $productID";
-        $resultGetData = mysqli_query($con, $sqlGetData) or die(mysqli_error($con));
-        $data = mysqli_fetch_array($resultGetData);
-
-        if ($data["SellerID"] != $_SESSION["SellerData"]["SellerID"])
-        {
-            die("Unauthorized action performed. You do not have the permission to perform the action");
-        }
-        
-        $sqlDelete = 
-        "
-        DELETE FROM product
-        WHERE ProductID = $productID
-        ";
-
-        mysqli_query($con, $sqlDelete) or die(mysqli_error($con));
-
-        $_SESSION["Message"] = "Product Deleted";
-        header("Location: seller_products.php?ProductID=".$productID);
-        return;
-
-   }
    
    //Normal load
    $productID = $_GET["ProductID"];
@@ -361,10 +336,6 @@
                     <div class="col-md-4"></div>
                     <div class="col-md-4"><input type="submit" class="btn btn-primary" name="updateBtn" value="Update Product" ></div>
                     <div class="col-md-4">
-                        <!-- <input type="submit" class="btn btn-outline-danger" name="DeleteBtn" value="Delete Product" formnovalidate> -->
-                        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#id_confirmDelete">
-                            Delete Product
-                        </button>
                     </div>
                 </div>
                 <br>
@@ -373,40 +344,7 @@
         </form> 
     </div>
 
-    <!-- Modal For Delete Confirmation -->
-    <div class="modal" id="id_confirmDelete">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <!-- Modal Header -->
-                <div class="modal-header bg-danger">
-                    <h4 class="modal-title text-white">DELETE PRODUCT</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-
-                <!-- Modal body -->
-                <div class="modal-body text-center">
-                    <div class="h4 text-danger">WARNING</div>
-                    <div>You are attempting to delete product:</div><br><br>
-                    <div class="display-6 fs-4"><?php echo $data["ProductName"] ?></div><br>
-                </div>
-
-                <!-- Modal footer -->
-                <div class="spanLineFull-gray mx-auto"></div>
-                <div class="row py-4">
-                    <div class="col-md-4 "></div>
-                    <div class="col-md-4 text-center">
-                        <input type="submit" form="form_editProduct" class="btn btn-danger" name="DeleteBtn" value="Delete Product" formnovalidate>
-                    </div>
-                    <div class="col-md-4 text-center">
-                        <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
+   
     <?php require "footer_seller.php";?>       
 
     
