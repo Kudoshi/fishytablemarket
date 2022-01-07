@@ -45,7 +45,7 @@
                         <div class="invalid-feedback">Please fill out this field with valid input.</div>
                     </div>
                     <div class="form-floating mb-3">
-                        <textarea class="form-control" placeholder="Recipient address" id="floatingTextarea2" name="recipientAddress" style="height: 100px" required ></textarea>
+                        <input class="form-control" placeholder="Recipient address" id="floatingTextarea2" name="recipientAddress" style="height: 100px" pattern="^[.0-9a-zA-Z\s,-]+$" required>
                         <label class="text-secondary" for="floatingTextarea2">Address</label>
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field with valid input.</div>

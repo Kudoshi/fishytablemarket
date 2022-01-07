@@ -20,6 +20,7 @@
     
     $sql = "INSERT INTO orders (RecipientName, RecipientAddress, RecipientTelephone, OrderDate, CartID, totalprice)
     VALUES ('$body[recipientName]','$recipientAddress','$body[recipientPhone]', '$date', '$body[CartID]','$body[totalPrice]')";
+
     if (!mysqli_query($con, $sql)) {
         $response["error"] = 'Error:'.mysqli_error($con);
     }
