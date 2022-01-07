@@ -56,7 +56,7 @@ $sql = mysqli_query($con, "SELECT * FROM (((productcartlist INNER JOIN cart ON p
                                 <button  type="button" class="btn btn-primary plus-btn" style="width:37px">+</button>
                             </div>
                             <div class="flex-container-row justify-content-end mb-4">    
-                                <form id="delete-item">
+                                <form class="delete-item">
                                     <input type="hidden" name="productID" value="'.$data["ProductCartListID"].'">
                                     <button type="submit" class="btn-light">DELETE<img src="image/lapsap_icon.png" alt="delete_icon" class="btn-img-icon ms-5" title="Delete this item?" data-bs-toggle="popover" data-bs-trigger="hover"></button>
                                 </form>
@@ -75,63 +75,65 @@ $sql = mysqli_query($con, "SELECT * FROM (((productcartlist INNER JOIN cart ON p
                 echo $cartData;
             }
         ?>
-        <!-- <form id="delete-item">
-            <input type="hidden" value="'.$data["ProductID"].'">
-            <input type="submit"><img src="image/lapsap_icon.png" alt="delete_icon" class="btn-img-icon ms-5" title="Delete this item?" data-bs-toggle="popover" data-bs-trigger="hover">
-        </form> -->
+
         <script>
-            const deleteCartItem = document.getElementById("delete-item");
-                deleteCartItem.addEventListener("submit",function(event){
-                    event.preventDefault();//dont allow refresh
-                    
-                    // take value and name from the form, and turn it into js object (json)
-                    const formData = Object.fromEntries(new FormData(event.target).entries());
-                    Swal.fire({
-                        title: 'Are you sure?',
-                        text: "Do you wanna delete the selected item?",
-                        icon: 'warning',
-                        showCancelButton: true,
-                        confirmButtonColor: '#3085d6',
-                        cancelButtonColor: '#d33',
-                        confirmButtonText: 'Yes, delete it!'
-                        }).then((result) => {
-                        if (result.isConfirmed) {
-                            // 'fetch api' to send data to insertcart.php
-                            fetch("deleteCart.php", {
-                            method: "POST",
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
-                            body: JSON.stringify(formData) //pass the formData, turn json into string (can't submit object, php can't read)
-                            })
-                            .then(function(res){ //wait the result come back
-                                return res.json()  //get response value, return to next .then
-                            })
-                            .then(function(response){
-                                // console.log(response)
-                                // Check if got error, and display a nice alert box.
-                                if(!response.error){
-                                    Swal.fire({
-                                        title: "Deleted",
-                                        icon: "success",
-                                        text: "The product has been deleted from your cart."
-                                    })
-                                    .then(function(){
-                                        window.location.reload();
-                                    });
-                                } 
-                                else {
-                                    Swal.fire({
-                                        title: "Oops...Delete action failed.",
-                                        icon: "error",
-                                        text: response.error
-                                    }) 
-                                }
-                            });
-                        }
+            function deleteCart(event) {
+                event.preventDefault();//dont allow refresh
+            
+                // take value and name from the form, and turn it into js object (json)
+                const formData = Object.fromEntries(new FormData(event.target).entries());
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "Do you wanna delete the selected item?",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                })
+                .then((result) => {
+                    if (!result.isConfirmed) {
+                        return;
+                    }
+                    // 'fetch api' to send data to insertcart.php
+                    fetch("deleteCart.php", {
+                        method: "POST",
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(formData) //pass the formData, turn json into string (can't submit object, php can't read)
                     })
-                    
-                });
+                    .then(function(res){ //wait the result come back
+                        return res.json()  //get response value, return to next .then
+                    })
+                    .then(function(response){
+                        // console.log(response)
+                        // Check if got error, and display a nice alert box.
+                        if(!response.error){
+                            Swal.fire({
+                                title: "Deleted",
+                                icon: "success",
+                                text: "The product has been deleted from your cart."
+                            })
+                            .then(function(){
+                                window.location.reload();
+                            });
+                        } 
+                        else {
+                            Swal.fire({
+                                title: "Oops...Delete action failed.",
+                                icon: "error",
+                                text: response.error
+                            }) 
+                        }
+                    });
+
+                })
+            }
+            const deleteCartItems = document.querySelectorAll(".delete-item"); //array
+            deleteCartItems.forEach(function(deleteItem){
+                deleteItem.addEventListener("submit",deleteCart)
+            })
         </script>
 
         </div>

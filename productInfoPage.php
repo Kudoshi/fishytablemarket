@@ -65,7 +65,7 @@
 <!-- Content -->
 <div class="flex-container-row bg-color-blue-3">
   <div class="main-product-img mt-2" style="width:30%;">
-      <img src="<?php echo $data["ProductPicture"];?>" alt="Product_Pic" style="width:500px;height:500px;">
+      <img src="<?php echo $data["ProductPicture"];?>" alt="Product_Pic" style="width:400px;height:400px;">
   </div>
   <div class="flex-container-column p-4 ms-4" style="width:800px;">
     <?php echo '<div class="mt-3"><h4>'.$data["ShopName"].' | <b>'.$data["ProductName"].'</b></h4><br></div>';?>
