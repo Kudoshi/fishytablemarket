@@ -127,10 +127,10 @@
                 </div>
                 <div class="spanLine mx-auto"></div>
                 <div class="h-25 d-flex flex-column pt-2 my-4">
-                    <p>Want to be a seller? <a class="d-inline" href="#Contact Us">Contact Us!</a><br><br>
+                    <p>Want to be a seller? <a class="d-inline" href="contactus.php">Contact Us!</a><br><br>
                     To customer login instead
                     </p>
-                    <a href="customer_login.php"><img src="image/arrow.png" class="imgFlip ms-2" style="max-width:20px" alt="Arrow Link"></a>
+                    <a href="cust_login.php"><img src="image/arrow.png" class="imgFlip ms-2" style="max-width:20px" alt="Arrow Link"></a>
                     
                 </div>
             </div>
