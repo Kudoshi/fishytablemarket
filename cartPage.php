@@ -24,8 +24,6 @@ $sql = mysqli_query($con, "SELECT * FROM (((productcartlist INNER JOIN cart ON p
         <div class="flex-container-column">
         <!-- Cart content -->
         <?php 
-            //temp
-            $cartID = 0;
             // Using WHILE LOOP to print every cartlist
             while ($data = mysqli_fetch_array($sql)) {
                 $cartID = $data["CartID"];
@@ -58,7 +56,10 @@ $sql = mysqli_query($con, "SELECT * FROM (((productcartlist INNER JOIN cart ON p
                             <div class="flex-container-row justify-content-end mb-4">    
                                 <form class="delete-item">
                                     <input type="hidden" name="productID" value="'.$data["ProductCartListID"].'">
-                                    <button type="submit" class="btn-light">DELETE<img src="image/lapsap_icon.png" alt="delete_icon" class="btn-img-icon ms-5" title="Delete this item?" data-bs-toggle="popover" data-bs-trigger="hover"></button>
+                                    <button type="submit" class="btn-light">
+                                        DELETE
+                                        <img src="image/lapsap_icon.png" alt="delete_icon" class="btn-img-icon ms-5" title="Delete this item?" data-bs-toggle="popover" data-bs-trigger="hover">
+                                    </button>
                                 </form>
                             </div>
                         </div>
@@ -66,12 +67,7 @@ $sql = mysqli_query($con, "SELECT * FROM (((productcartlist INNER JOIN cart ON p
                     <br>
                     <hr>
                     <br>
-                    ';
-                    
-                    // <a href = "" class="deleteBtn" id="'.$data["ProductID"].'">
-                    //     <img src="image/lapsap_icon.png" alt="delete_icon" class="btn-img-icon ms-5" title="Delete this item?" data-bs-toggle="popover" data-bs-trigger="hover">
-                    // </a>
-                    
+                    ';                    
                 echo $cartData;
             }
         ?>
@@ -170,6 +166,7 @@ $sql = mysqli_query($con, "SELECT * FROM (((productcartlist INNER JOIN cart ON p
             for (var i = 0; i < plusButton.length; i++) {
                 var button = plusButton[i];
                 button.addEventListener('click', function(event) {
+                    // console.log(event);
                     var buttonClicked = event.target;
                         // console.log(buttonClicked);
                     var input = buttonClicked.parentElement.children[2];
@@ -181,7 +178,7 @@ $sql = mysqli_query($con, "SELECT * FROM (((productcartlist INNER JOIN cart ON p
 
                     // Getting productcartlist ID
                     var findID = buttonClicked.parentElement.parentElement.children[0].value;
-                        console.log(findID);
+                        // console.log(findID);
 
                     //update quantity into database and show it
                     updateQty(newValue,findID);
@@ -209,7 +206,7 @@ $sql = mysqli_query($con, "SELECT * FROM (((productcartlist INNER JOIN cart ON p
 
                         // Getting productcartlist ID
                         var findID = buttonClicked.parentElement.parentElement.children[0].value;
-                        console.log(findID);
+                        // console.log(findID);
 
                         //update quantity into database and show it
                         updateQty(newValue,findID);
