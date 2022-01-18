@@ -29,7 +29,6 @@
                 <div class="display-5">DELIVERY ADDRESS DETAIL</div>
             </div>
                 <br>
-            <!-- <form action="insertOrder.php" method="post" id="form1" class="flex-container-column bg-light pt-3 pb-3 was-validated" style="width:90%"> -->
             <form id="form1" class="flex-container-column bg-light pt-3 pb-3 was-validated" style="width:90%">
                 <div style="width:80%">
                     <div class="form-floating mb-3">

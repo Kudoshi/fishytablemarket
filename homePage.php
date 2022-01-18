@@ -151,24 +151,7 @@
             <h3 style="text-align:center;">Meat</h3>
           </div>
         </div>
-        <!-- <?php
-          // $image = array("image/vege.jpg","image/fruit.jpg","image/mushroom.jpg","image/bean.jpg","image/chicken.jpg");
-          // $number = 0;
-          //   while ($data = mysqli_fetch_array($result_subOrganic)) {
-          //     $item = '
-          //     <div class="flex-container-column some-padding">
-          //       <div class="cate-effect" onclick="window.location=''">
-          //         <div class="zoomIn">
-          //           <img src="'.$image[].'" alt="Sub-Organic">
-          //         </div>
-          //         <h3 style="text-align:center;">.'$data["SubCategoryName"]'.</h3>
-          //       </div>
-          //     </div>
-          //     '
-          //     $number += 1;
-          //     echo $item;
-            // }
-          ?> -->
+        
       </div>
     </div>
 

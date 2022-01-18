@@ -3,7 +3,6 @@ if (!isset($_SESSION["CustID"])) {
     die("Please login before you access.");
 }
 $sql = mysqli_query($con, "SELECT * FROM (((productcartlist INNER JOIN cart ON productcartlist.CartID = cart.CartID) INNER JOIN product ON productcartlist.ProductID =product.ProductID) INNER JOIN seller ON product.SellerID = seller.SellerID) INNER JOIN customer ON cart.CustID = customer.CustID WHERE cart.CustID = ".$_SESSION['CustID']." AND cart.CartPaid = 0");
-// $numOfCart = mysqli_num_rows($sql);
 
 ?>
 <!DOCTYPE html>
@@ -24,52 +23,52 @@ $sql = mysqli_query($con, "SELECT * FROM (((productcartlist INNER JOIN cart ON p
         <div class="flex-container-column">
         <!-- Cart content -->
         <?php 
-            // Using WHILE LOOP to print every cartlist
-            while ($data = mysqli_fetch_array($sql)) {
-                $cartID = $data["CartID"];
-                $cartData = '
-                    <div class="flex-container-row" style="background-color:rgba(113, 255, 255, 0.204); width:70%; border-radius:10px;">
-                        <!-- image -->
-                        <div class="card some-margin border-dark" style="width:300px; height: auto;">
-                            <a href="productInfoPage.php?id='.$data["ProductID"].'">
-                                <img class="card-img-top" src="'.$data["ProductPicture"].'" alt="Product image" style="width:100%">
-                                <div class="card-body">
-                                    <h4 class="card-title text-center">'.$data["ProductName"].'</h4>
-                                </div>
-                            </a>
+        // Using WHILE LOOP to print every cartlist
+        while ($data = mysqli_fetch_array($sql)) {
+            $cartID = $data["CartID"];
+            $cartData = '
+                <div class="flex-container-row" style="background-color:rgba(113, 255, 255, 0.204); width:70%; border-radius:10px;">
+                    <!-- image -->
+                    <div class="card some-margin border-dark" style="width:300px; height: auto;">
+                        <a href="productInfoPage.php?id='.$data["ProductID"].'">
+                            <img class="card-img-top" src="'.$data["ProductPicture"].'" alt="Product image" style="width:100%">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">'.$data["ProductName"].'</h4>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- detail -->
+                    <div class="flex-container-column box" style="width: 600px;">
+                        <input type="hidden" value="'.$data["ProductCartListID"].'">
+                        <div class="shop-title mb-5" style="text-align:center; padding:20px;">
+                            <h4>Shop: '.$data["ShopName"].'</h4>
                         </div>
-                        <!-- detail -->
-                        <div class="flex-container-column box" style="width: 600px;">
-                            <input type="hidden" value="'.$data["ProductCartListID"].'">
-                            <div class="shop-title mb-5" style="text-align:center; padding:20px;">
-                                <h4>Shop: '.$data["ShopName"].'</h4>
-                            </div>
-                            <div class="mb-2" style="margin-top:10px;">
-                                <h2>PRICE: RM <span>'.$data["Price"].'</span></h2>
-                            </div>
-                            <div class="quantity mb-5" style="margin-top:8px;">
-                                <label class="me-3"><h3>Quantity:</h3></label>
-                                <button type="button" class="btn btn-primary minus-btn" style="width:37px">-</button> 
-                                <input type="number" value="'.$data["Quantity"].'" min="1" disabled>
-                                <button  type="button" class="btn btn-primary plus-btn" style="width:37px">+</button>
-                            </div>
-                            <div class="flex-container-row justify-content-end mb-4">    
-                                <form class="delete-item">
-                                    <input type="hidden" name="productID" value="'.$data["ProductCartListID"].'">
-                                    <button type="submit" class="btn-light">
-                                        DELETE
-                                        <img src="image/lapsap_icon.png" alt="delete_icon" class="btn-img-icon ms-5" title="Delete this item?" data-bs-toggle="popover" data-bs-trigger="hover">
-                                    </button>
-                                </form>
-                            </div>
+                        <div class="mb-2" style="margin-top:10px;">
+                            <h2>PRICE: RM <span>'.$data["Price"].'</span></h2>
                         </div>
-                    </div> 
-                    <br>
-                    <hr>
-                    <br>
-                    ';                    
-                echo $cartData;
-            }
+                        <div class="quantity mb-5" style="margin-top:8px;">
+                            <label class="me-3"><h3>Quantity:</h3></label>
+                            <button type="button" class="btn btn-primary minus-btn" style="width:37px">-</button> 
+                            <input type="number" value="'.$data["Quantity"].'" min="1" disabled>
+                            <button  type="button" class="btn btn-primary plus-btn" style="width:37px">+</button>
+                        </div>
+                        <div class="flex-container-row justify-content-end mb-4">    
+                            <form class="delete-item">
+                                <input type="hidden" name="productID" value="'.$data["ProductCartListID"].'">
+                                <button type="submit" class="btn-light">
+                                    DELETE
+                                    <img src="image/lapsap_icon.png" alt="delete_icon" class="btn-img-icon ms-5" title="Delete this item?" data-bs-toggle="popover" data-bs-trigger="hover">
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div> 
+                <br>
+                <hr>
+                <br>
+                ';                    
+            echo $cartData;
+        }
         ?>
 
         <script>
