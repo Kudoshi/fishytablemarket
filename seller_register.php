@@ -252,7 +252,6 @@
     <script>
         function displayImg(event){
             var image = document.getElementById('id_picPlaceHolder');
-            console.log(image);
             try{
                 fileFormat = event.target.files[0].name.substring(event.target.files[0].name.lastIndexOf('.')+1, event.target.files[0].name.length);
                 
@@ -274,7 +273,6 @@
 
         function CheckImage(){
             var errorMsg = document.getElementById("id_photoErrorMsg");
-            console.log(errorMsg.innerHTML);
             if (errorMsg.innerHTML.trim() != "")
             {
                 alert("Invalid image format uploaded \n Only jpg, png and jpeg files are allowed");

@@ -45,21 +45,18 @@
     <?php require "footer_seller.php";?>
 
     <script>
-        //Set frame height to max
+        //Set frame height to max and disable all links
         var frame = document.getElementById("Iframe");
         frame.onload = function()
         {
             frame.style.height = frame.contentWindow.document.body.scrollHeight + 21 + 'px';
             var links= frame.contentWindow.document.getElementsByTagName("a"); 
 
-            console.log(links);
+        
             for (var i in links) { 
-                links[i].href = "javascript:void(0)"; //.setAttribute("target", "_blank"); 
+                links[i].href = "javascript:void(0)"; 
             }
         }
-
-        //Disable all buttons and links in iframe
-        // console.log(document.getElementsByTagName("a"));
         
     </script>
 </body>

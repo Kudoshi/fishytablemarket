@@ -163,7 +163,7 @@
                                     <div class="px-4 py-2 text-center" style="min-width: 250px">
                                         <div class="text-break">'.$row["CustName"].'</div>
                                         <br>
-                                        <div class="">'.generate_ratingStar(5).'</div>
+                                        <div class="">'.generate_ratingStar($row["Rating"]).'</div>
                                         <div>5 / 5</div>
                                     </div>
                                     <div class="bg-color-black-4 pe-1"></div>

@@ -40,7 +40,6 @@ function uploadImg($image){
 
 function sanitizeInput($input, $filterTag)
 {
-    $hasError = False;
     if ($filterTag == "email")
     {
         $filterElement = FILTER_SANITIZE_EMAIL;

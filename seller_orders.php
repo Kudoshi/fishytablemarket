@@ -58,7 +58,6 @@
                     while ($row=mysqli_fetch_array($result))
                     {
                         $orderCounter--;
-                        // TO DO: Order Counter
                         $element = '
                             <div class="bg-color-white-1 p-4 mb-4 shadow-sm" style="min-height: 400px;">
                                 <div class="ps-2 h5"><span class="badge rounded-pill bg-color-blue-1 px-3 py-2">Order | '.$orderCounter.' </span></div>

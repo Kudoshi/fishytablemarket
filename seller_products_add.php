@@ -90,7 +90,7 @@
             header("Location: seller_products_add.php");
             return;
         }
-   }
+   }    
         
 ?>
 <!DOCTYPE html>
@@ -189,7 +189,8 @@
                     <div class="col-md-3 ">
                         <div class="input-group">
                             <span class="input-group-text">RM</span>
-                            <input type="text" class="form-control" name="input_price" id="id_price" placeholder="0.00" onblur="SetDecimalFloatValue(this.id,2, this.value, '0.00')" value="<?php echo $_price?>" required>
+                            <input type="text" class="form-control" name="input_price" id="id_price" placeholder="0.00" onblur="SetDecimalFloatValue(this.id,2, this.value, '0.00')" 
+                            value="<?php echo $_price?>" required>
                         </div>
                         
                     </div>
@@ -345,7 +346,6 @@
 
         function CheckImage(){
             var errorMsg = document.getElementById("id_photoErrorMsg");
-            console.log(errorMsg.innerHTML);
             if (errorMsg.innerHTML.trim() != "")
             {
                 alert("Invalid image format uploaded \n Only jpg, png and jpeg files are allowed");
