@@ -157,7 +157,6 @@ $sql = mysqli_query($con, "SELECT * FROM (((productcartlist INNER JOIN cart ON p
         <script>
             // PLUS & MINUS Button (With update quantity using ajax)
             // ----------------------
-            // cite: https://www.youtube.com/watch?v=2purijiQrf4
             var plusButton = document.getElementsByClassName('plus-btn');
             var minusButton = document.getElementsByClassName('minus-btn');
                 // console.log(plusButton, minusButton)

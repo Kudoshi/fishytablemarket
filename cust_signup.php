@@ -48,13 +48,30 @@
             $sql = "INSERT INTO customer (CustName, CustEmail, CustPassword, CustAddress)
             VALUES
             ('$FName "."$LName', '$email', '$password', '$address')";
+
+            
+
+
             if (!mysqli_query($con,$sql))
             {
                 $errorMsg .= "<br>Error creating an account";
             }
-            else ("SELECT CustID FROM customer WHERE CustEmail = $email")
+            else
             {
-                $data = mysqli_fetch_array($result)};
+                $sql_CustInfo = "SELECT CustID FROM customer WHERE CustEmail = '".$email."'";
+                $result = mysqli_query($con, $sql_CustInfo) or die(mysqli_error($con));
+                if($data = mysqli_fetch_array($result))
+                {
+                    $sqlNewCart = "INSERT INTO cart (CartPaid, CustID) VALUES (0, ".$data["CustID"].")";
+                    if (!mysqli_query($con, $sqlNewCart)) {
+                        $errorMsg .= "* Unable to create cart for new customer";
+                    }
+                }
+                else
+                {
+                    $errorMsg .= "* Problem with new account created";
+                }
+            }
         }
 
         // Control Redirect

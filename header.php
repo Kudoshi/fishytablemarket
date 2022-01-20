@@ -54,9 +54,6 @@
                         echo '</a> </li>';
                     }
                 ?>
-                <li class="nav-item ms-2">
-                    <a href="#search" class="nav-link"><img src="image/search.png" width="20px",height="20px"></a>
-                </li>
             </ul>
         </div>
     </div>

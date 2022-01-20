@@ -42,9 +42,9 @@ $html_script =
     <table class="table table-striped table-bordered ordertable" style="width: 100%">
     <thread>
         <tr>
-            <th>'.$row["ProductName"].'</th>
-            <th>'.$row["Quantity"].'</th>
-            <th>'.$row["UnitPrice"].'</th>
+            <th width="10%">'.$row["ProductName"].'</th>
+            <th width="10%">'.$row["Quantity"].'</th>
+            <th width="10%">'.$row["UnitPrice"].'</th>
         </tr>
     </thread>
     </table>';
