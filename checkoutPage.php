@@ -44,8 +44,9 @@
                         <div class="invalid-feedback">Please fill out this field with valid input.</div>
                     </div>
                     <div class="form-floating mb-3">
-                        <input class="form-control" placeholder="Recipient address" id="floatingTextarea2" name="recipientAddress" style="height: 100px" pattern="^[.0-9a-zA-Z\s,-]+$" required>
-                        <label class="text-secondary" for="floatingTextarea2">Address</label>
+                        <!-- <input class="form-control" placeholder="Recipient address" id="floatingTextarea2" name="recipientAddress" style="height: 100px" pattern="^[.0-9a-zA-Z\s,-]+$" required> -->
+                        <input class="form-control" placeholder="Recipient address" id="floatingTextarea2" name="recipientAddress" style="height: 100px" pattern="[.0-9a-zA-Z/\s,-]{20,}" required>
+                        <label class="text-secondary" for="floatingTextarea2">Address (No, Street, Region, Postcode, City, State)</label>
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field with valid input.</div>
                     </div>

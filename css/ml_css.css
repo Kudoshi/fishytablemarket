@@ -208,15 +208,6 @@
     background-size: cover;
 }
 
-.blue-sky-bg {
-    background-image: url('../image/blue_sky_trans.png');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    /* filter: blur(8px);
-    -webkit-filter: blur(8px); */
-}
-
 
 .vl {
     border-left: 4px solid brown;
