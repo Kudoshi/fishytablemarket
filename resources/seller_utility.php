@@ -26,7 +26,6 @@ function validateImg($image)
 }
 
 function uploadImg($image){
-    //Generate name
     $imageFileType = strtolower(pathinfo($image["name"], PATHINFO_EXTENSION));
     $f_name = "image/_".generateUniqueHash().".".$imageFileType;
     $f_Location = "image/"."_".generateUniqueHash().".".$imageFileType;
