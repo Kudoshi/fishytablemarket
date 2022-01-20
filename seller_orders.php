@@ -94,7 +94,7 @@
                         while ($record =mysqli_fetch_array($resultRecords))
                         {
                             $totalPrice += $record["Quantity"]*$record["UnitPrice"];
-                            $totalQuantity ++;
+                            $totalQuantity += $record["Quantity"];
                             $element .=
                             '<tr>
                                 <td><img src="'.$record["ProductPicture"].'" style="width: 100px; height: 100px;"></td>
