@@ -3,10 +3,8 @@
 <?php require "resources/seller_security.php"?>
 <?php
 
-    // print_r($_POST);
    if (isset($_POST["updateBtn"])) //Processing the input
    {
-        // die("hello");
        $errorMsg = "";
        $productName = sanitizeInput($_POST["input_productName"], "string");
        $shippingMethod = sanitizeInput($_POST["input_shippingMethod"], "string");
